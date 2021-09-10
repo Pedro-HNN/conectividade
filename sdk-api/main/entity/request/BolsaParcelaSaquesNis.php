@@ -3,42 +3,61 @@
 namespace org\gov\br\sdk\entity\request;
 
 class BolsaParcelaSaqueNis extends Request{
-    protected $codigoIbge;
-    protected $mesAno;
+    protected $anoMesCompetencia;
+    protected $anoMesReferencia;
+    protected $nis;
     protected $pagina;
 
     /**
-     * Get the value of codigoIbge
+     * Get the value of anoMesCompetencia
      */
-    public function getCodigoIbge()
+    public function getAnoMesCompetencia()
     {
-        return $this->codigoIbge;
+        return $this->anoMesCompetencia;
     }
 
     /**
-     * Set the value of codigoIbge
+     * Set the value of anoMesCompetencia
      */
-    public function setCodigoIbge($codigoIbge): self
+    public function setAnoMesCompetencia($anoMesCompetencia): self
     {
-        $this->codigoIbge = $codigoIbge;
+        $this->anoMesCompetencia = $anoMesCompetencia;
 
         return $this;
     }
 
     /**
-     * Get the value of mesAno
+     * Get the value of anoMesReferencia
      */
-    public function getMesAno()
+    public function getAnoMesReferencia()
     {
-        return $this->mesAno;
+        return $this->anoMesReferencia;
     }
 
     /**
-     * Set the value of mesAno
+     * Set the value of anoMesReferencia
      */
-    public function setMesAno($mesAno): self
+    public function setAnoMesReferencia($anoMesReferencia): self
     {
-        $this->mesAno = $mesAno;
+        $this->anoMesReferencia = $anoMesReferencia;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nis
+     */
+    public function getNis()
+    {
+        return $this->nis;
+    }
+
+    /**
+     * Set the value of nis
+     */
+    public function setNis($nis): self
+    {
+        $this->nis = $nis;
 
         return $this;
     }
