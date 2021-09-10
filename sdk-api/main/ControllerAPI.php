@@ -1,13 +1,14 @@
-<?
+<?php
 
 namespace org\gov\br\sdk;
 
+use org\gov\br\sdk\service\AuxilioService;
 use org\gov\br\sdk\service\BolsaFamiliaService;
 
 class ControllerAPI {
     //SERVICES
     public $bolsaFamiliaService;
-    public $AuxilioService;
+    public $auxilioService;
 
     //CONFIG
     public $urlBase;
@@ -23,6 +24,8 @@ class ControllerAPI {
         }
 
         $this->bolsaFamiliaService = new BolsaFamiliaService($urlBase, $chaveApi);
-        
+        $this->auxilioService = new AuxilioService($urlBase, $chaveApi);
     }
 }
+
+?>

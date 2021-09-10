@@ -7,7 +7,16 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
-    'org\\gov\\br\\sdk\\BolsaFamilia' => $baseDir . '/main/BolsaFamilia.php',
-    'org\\gov\\cpflight\\sdk\\service\\BolsaMunicipio' => $baseDir . '/main/service/BolsaMunicipio.php',
-    'org\\gov\\cpflight\\sdk\\service\\Service' => $baseDir . '/main/service/Service.php',
+    'org\\gov\\br\\sdk\\ControllerAPI' => $baseDir . '/main/ControllerAPI.php',
+    'org\\gov\\br\\sdk\\entity\\request\\AuxilioBenifeciarioMunicipioRequest' => $baseDir . '/main/entity/request/AuxilioBenifeciarioMunicipioRequest.php',
+    'org\\gov\\br\\sdk\\entity\\request\\AuxilioMunicipioRequest' => $baseDir . '/main/entity/request/AuxilioMunicipioRequest.php',
+    'org\\gov\\br\\sdk\\entity\\request\\AuxilioNisRequest' => $baseDir . '/main/entity/request/AuxilioNisRequest.php',
+    'org\\gov\\br\\sdk\\entity\\request\\BolsaCpfNisRequest' => $baseDir . '/main/entity/request/BolsaCpfNisRequest.php',
+    'org\\gov\\br\\sdk\\entity\\request\\BolsaMunicipioRequest' => $baseDir . '/main/entity/request/BolsaMunicipioRequest.php',
+    'org\\gov\\br\\sdk\\entity\\request\\BolsaParcelaSaqueNis' => $baseDir . '/main/entity/request/BolsaParcelaSaquesNis.php',
+    'org\\gov\\br\\sdk\\entity\\request\\Request' => $baseDir . '/main/entity/request/Request.php',
+    'org\\gov\\br\\sdk\\entity\\response\\Response' => $baseDir . '/main/entity/response/Response.php',
+    'org\\gov\\br\\sdk\\service\\AuxilioService' => $baseDir . '/main/service/AuxilioService.php',
+    'org\\gov\\br\\sdk\\service\\BolsaFamiliaService' => $baseDir . '/main/service/BolsaFamiliaService.php',
+    'org\\gov\\br\\sdk\\service\\Service' => $baseDir . '/main/service/Service.php',
 );

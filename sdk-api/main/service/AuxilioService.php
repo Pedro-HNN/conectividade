@@ -14,7 +14,7 @@ class AuxilioService extends Service {
 
         try{
             $response = $this->execute();
-            return json_decode($response);
+            return $response;
         }catch(\Exception $e){
             throw $e;
         }
@@ -27,7 +27,7 @@ class AuxilioService extends Service {
 
         try{
             $response = $this->execute();
-            return json_decode($response);
+            return $response;
         }catch(\Exception $e){
             throw $e;
         }
@@ -40,7 +40,7 @@ class AuxilioService extends Service {
 
         try{
             $response = $this->execute();
-            return json_decode($response);
+            return $response;
         }catch(\Exception $e){
             throw $e;
         }

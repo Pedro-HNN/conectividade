@@ -4,45 +4,37 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb28b2251386994c3e5048b2c5a4bf5e0
+class ComposerStaticInit4257e2a662f50524442964cbb92d8479
 {
     public static $files = array (
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'P' => 
+        'R' => 
         array (
-            'Psr\\Http\\Message\\' => 17,
-            'Psr\\Http\\Client\\' => 16,
+            'React\\Promise\\' => 14,
         ),
         'G' => 
         array (
-            'GuzzleHttp\\Psr7\\' => 16,
-            'GuzzleHttp\\Promise\\' => 19,
+            'GuzzleHttp\\Stream\\' => 18,
+            'GuzzleHttp\\Ring\\' => 16,
             'GuzzleHttp\\' => 11,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Psr\\Http\\Message\\' => 
+        'React\\Promise\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/react/promise/src',
         ),
-        'Psr\\Http\\Client\\' => 
+        'GuzzleHttp\\Stream\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-client/src',
+            0 => __DIR__ . '/..' . '/guzzlehttp/streams/src',
         ),
-        'GuzzleHttp\\Psr7\\' => 
+        'GuzzleHttp\\Ring\\' => 
         array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
-        ),
-        'GuzzleHttp\\Promise\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
+            0 => __DIR__ . '/..' . '/guzzlehttp/ringphp/src',
         ),
         'GuzzleHttp\\' => 
         array (
@@ -52,17 +44,26 @@ class ComposerStaticInitb28b2251386994c3e5048b2c5a4bf5e0
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'org\\gov\\br\\sdk\\BolsaFamilia' => __DIR__ . '/../..' . '/main/BolsaFamilia.php',
-        'org\\gov\\cpflight\\sdk\\service\\BolsaMunicipio' => __DIR__ . '/../..' . '/main/service/BolsaMunicipio.php',
-        'org\\gov\\cpflight\\sdk\\service\\Service' => __DIR__ . '/../..' . '/main/service/Service.php',
+        'org\\gov\\br\\sdk\\ControllerAPI' => __DIR__ . '/../..' . '/main/ControllerAPI.php',
+        'org\\gov\\br\\sdk\\entity\\request\\AuxilioBenifeciarioMunicipioRequest' => __DIR__ . '/../..' . '/main/entity/request/AuxilioBenifeciarioMunicipioRequest.php',
+        'org\\gov\\br\\sdk\\entity\\request\\AuxilioMunicipioRequest' => __DIR__ . '/../..' . '/main/entity/request/AuxilioMunicipioRequest.php',
+        'org\\gov\\br\\sdk\\entity\\request\\AuxilioNisRequest' => __DIR__ . '/../..' . '/main/entity/request/AuxilioNisRequest.php',
+        'org\\gov\\br\\sdk\\entity\\request\\BolsaCpfNisRequest' => __DIR__ . '/../..' . '/main/entity/request/BolsaCpfNisRequest.php',
+        'org\\gov\\br\\sdk\\entity\\request\\BolsaMunicipioRequest' => __DIR__ . '/../..' . '/main/entity/request/BolsaMunicipioRequest.php',
+        'org\\gov\\br\\sdk\\entity\\request\\BolsaParcelaSaqueNis' => __DIR__ . '/../..' . '/main/entity/request/BolsaParcelaSaquesNis.php',
+        'org\\gov\\br\\sdk\\entity\\request\\Request' => __DIR__ . '/../..' . '/main/entity/request/Request.php',
+        'org\\gov\\br\\sdk\\entity\\response\\Response' => __DIR__ . '/../..' . '/main/entity/response/Response.php',
+        'org\\gov\\br\\sdk\\service\\AuxilioService' => __DIR__ . '/../..' . '/main/service/AuxilioService.php',
+        'org\\gov\\br\\sdk\\service\\BolsaFamiliaService' => __DIR__ . '/../..' . '/main/service/BolsaFamiliaService.php',
+        'org\\gov\\br\\sdk\\service\\Service' => __DIR__ . '/../..' . '/main/service/Service.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb28b2251386994c3e5048b2c5a4bf5e0::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb28b2251386994c3e5048b2c5a4bf5e0::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitb28b2251386994c3e5048b2c5a4bf5e0::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit4257e2a662f50524442964cbb92d8479::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit4257e2a662f50524442964cbb92d8479::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit4257e2a662f50524442964cbb92d8479::$classMap;
 
         }, null, ClassLoader::class);
     }

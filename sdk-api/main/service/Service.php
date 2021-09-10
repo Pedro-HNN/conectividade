@@ -2,7 +2,8 @@
 
 namespace org\gov\br\sdk\service;
 
-use GuzzleHttp;
+use Exception;
+use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Exception\BadResponseException;
@@ -15,14 +16,14 @@ class Service {
     private $requestMethod;
     private $chaveApi;
 
-    public function __construct($urlApi, $chaveApi)
+    public function __construct($urlBase, $chaveApi)
     {
-        $this->setUrlApi($urlApi);
+        $this->setUrlBase($urlBase);
         $this->setChaveApi($chaveApi);
     }
 
     protected function execute(){
-        $this->urlApi = preg_replace('/\/$/', '', $this->resturlApi);
+        $this->urlApi = preg_replace('/\/$/', '', $this->urlApi);
         $headers = array();
         $query = array();
 
@@ -32,12 +33,14 @@ class Service {
 
         $headers = ['chave-api-dados' => $this->chaveApi];
         
-        $client = new GuzzleHttp\Client();
+        $client = new Client();
 
-        $request = $client->createRequest($this->requestMethod, $this->urlBase.$this->urlApi, $query);
-
+        $request = $client->createRequest($this->requestMethod,  $this->urlBase.$this->urlApi, array('query' => $query));
+        $request->setHeaders($headers);
+    
         try{
-            $response = $request->send();
+            $response = $client->send($request);
+
         }catch (ClientException $e) {
             $error_message = $e->getResponse();
             throw new \Exception($error_message, $e->getResponse()->getStatusCode());
