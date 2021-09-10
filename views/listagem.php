@@ -1,7 +1,7 @@
 <?
 session_start();
 $dadoAtual = $_SESSION['ultimoValor'];
-var_dump($dadoAtual[0]->titularBolsaFamilia);
+if(isset($dadoAtual[0])){
 ?>
 <div style="display: flex; flex-direction:column;">
     <div class="mesCompetencia"><?echo $dadoAtual[0]->dataMesCompetencia?></div>
@@ -12,8 +12,14 @@ var_dump($dadoAtual[0]->titularBolsaFamilia);
     <div class="valor"><?echo $dadoAtual[0]->valor?></div>
     <div class="qtdDependente"><?echo $dadoAtual[0]->quantidadeDependentes?></div>
 </div>
+<?
+}else{
+    echo 'Nenhum dado encontrado';
+}
+?>
 
 <form action="../controllers/controller.php" method="POST">
     <input type="text" placeholder="Mes Referencia" name="mes">
+    <input type="text" placeholder="CPF titular" name="cpf">
     <button value="submit">Pesquisar</button>
 </form>
