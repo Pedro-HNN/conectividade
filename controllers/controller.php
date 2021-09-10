@@ -8,7 +8,7 @@ switch($acao){
         $ch = curl_init();
         $curl_setopt($ch, CURLOPT_URL, "http://api.portaldatransparencia.gov.br/api-de-dados/bolsa-familia-por-municipio");
 
-        
+        'teste';
         header('Location: ../'.$page);
         die();
     default:
