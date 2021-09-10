@@ -1,18 +1,19 @@
 <?php
 session_start();
+
+require '../sdk-api/SerproApi.php';
+
 $acao = $_GET["acao"];
-$page = 'index.php';
+
+$serpro = new SerproApi('http://api.portaldatransparencia.gov.br/api-de-dados', "ee62f3ebb1156b63a3fe831a8a4cbbba");
+$result = $serpro->consultarBolsaCpfNis("2020".$_POST['mes'],"2020".$_POST['mes'],"01942057113","1");
+
+
+$_SESSION['ultimoValor'] = $result;
+
 switch($acao){
-    case 'bolsa familia':
-
-        $ch = curl_init();
-        $curl_setopt($ch, CURLOPT_URL, "http://api.portaldatransparencia.gov.br/api-de-dados/bolsa-familia-por-municipio");
-
-        'teste';
-        header('Location: ../'.$page);
-        die();
     default:
-        $_SESSION['result'] = "teste concluido";
-        header('Location: ../'.$page);
-        die();
+        $_SESSION['result'] = $_POST['mes'];
+        header('Location: ../views/listagem.php');
+        die;
 }

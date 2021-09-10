@@ -8,21 +8,7 @@
     <title>Hackathon</title>
 </head>
 <?php
-session_start();
 
-$servidor = "bd.inova.serpro.gov.br";
-$port = 5432;
-$user = "equipe18";
-$password = "a5966190ed6aa38563cd4ac5c05deec7";
-
-$conexao = pg_connect(@"host={$servidor} port={$port} dbname=postgres user={$user} password={$password}") or die();
-
-$sql = @"select * from equipe18";
-
-$result = pg_query($conexao, $sql);
-while ($row = pg_fetch_array($result)) {
-    var_dump($row);
-  }
 ?>
 <?php include_once 'views/header.html' ?>
 
