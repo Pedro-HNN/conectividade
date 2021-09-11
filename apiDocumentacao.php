@@ -7,11 +7,8 @@ $serpro = new SerproApi('http://api.portaldatransparencia.gov.br/api-de-dados', 
 
 //Metodo de consulta da bolsa familia por CPF ou NIS
 //Params = 1-AnoMesCompetencia; 2-AnoMesReferencia; 3-CPF ou NIS; 4-Pagina
-$mes = '10';
-$result = $serpro->consultarBolsaCpfNis("2020".strval($mes),"2020".strval($mes),"01942057113","1");
+$result = $serpro->consultarBolsaCpfNis("202006","202003","01942057113","1");
 
-var_dump($result);
-die;
 
 //Metodo de consulta da bolsa familia por municipio
 //Params = 1-CodigoIbge; 2-mesAno; 3-pagina

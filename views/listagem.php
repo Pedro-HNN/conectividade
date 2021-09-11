@@ -1,4 +1,5 @@
 <?
+
 session_start();
 $dadoAtual = $_SESSION['ultimoValor'];
 if(isset($dadoAtual[0])){
