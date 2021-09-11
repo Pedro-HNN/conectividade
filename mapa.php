@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
 <link rel="stylesheet" href="./views/mapa/style.css">
 <link rel="stylesheet" href="./views/datepicker/bootstrap-datepicker.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.pt-BR.js"></script>
 <style>
 
 	body{
@@ -36,13 +37,11 @@
     format: "mm-yyyy",
     startView: "months", 
     minViewMode: "months",
-    language:"pt-BR"
+    startDate : new Date('2020-04-1'),
+    endDate : new Date('2021-07-1')
+
 });
 
-dp.on('changeMonth', function (e) {    
-   //do something here
-   alert("Month changed");
-});
 </script>
 
 
@@ -50,15 +49,15 @@ dp.on('changeMonth', function (e) {
 	
   <svg version="1.1" id="map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="450px" height="460px" viewBox="0 0 450 460" enable-background="new 0 0 450 460" xml:space="preserve">
     <g>
-      <a href="#" id="state_to" class="state" data-state="to" xlink:href="">
-      <title>Tocantins</title>
+      <a href="#" id="state_to" class="state" data-state="Tocantins" cod-state="1700108" xlink:href="">
+        <title>Tocantins</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M289.558,235.641
         c16.104,0.575,44.973-31.647,44.835-45.259c-0.136-13.612-17.227-58.446-22.349-66.088c-5.122-7.628-37.905,2.506-37.905,2.506
         S234.852,233.695,289.558,235.641z"></path>
         <text transform="matrix(1 0 0 1 287.0137 188.3208)" fill="#FFFFFF">TO</text>
       </a>
-      <a href="#" id="state_ba" class="state" data-state="ba" xlink:href="">
-      <title>Bahia</title>
+      <a href="#" id="state_ba" class="state" cod-state="2900108" data-state="Bahia" xlink:href="">
+        <title>Bahia</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M313.276,197.775
         c2.084-2.739,3.506-7.012,6.464-8.764c1.641-0.973,3.232-4.684,4.271-5.163c2.304-1.014,12.161-25.143,20.706-22.513
         c1.095,0.342,29.881,3.478,32.153,7.532c2.246-0.506,17.582-8.804,25.829-4.999c9.172,4.246,11.225,20.679,11.2,20.843
@@ -69,7 +68,7 @@ dp.on('changeMonth', function (e) {
         c-0.546-1.725-5.396-6.079-0.026-7.175c-3.175,0.959-1.944-4.027,0.875-3.012C316.726,200.733,314.044,200.527,313.276,197.775z"></path>
         <text transform="matrix(1 0 0 1 359.7324 210.1221)" fill="#FFFFFF">BA</text>
       </a>
-      <a href="#" id="state_se" class="state" data-state="se" xlink:href="">
+      <a href="#" id="state_se" class="state" cod-state="2800108" data-state="Sergipe" xlink:href="">
       <title>Sergipe</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M408.561,191.735
         c0.521-1.505,2.465-0.725,3.533-0.794c2.273-0.164,0.494-2.738,1.095-3.778c2.026-3.793-2.738-5.999-1.998-10.408
@@ -79,8 +78,8 @@ dp.on('changeMonth', function (e) {
         c-6.238,0-11.258-5.053-11.258-11.261C406.063,187.89,411.084,182.854,417.324,182.854z"></path>
         <text transform="matrix(1 0 0 1 408.9121 198.6689)" fill="#FFFFFF">SE</text>
       </a>
-      <a href="#" id="state_pe" class="state" data-state="pe" xlink:href="">
-      <title>Pernambuco</title>
+      <a href="#" id="state_pe" class="state" cod-state="2600108" data-state="Pernambuco" xlink:href="">
+        <title>Pernambuco</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M373.011,167.238
         c2.709-0.795,6.218-14.106,8.325-15.106c4.136-1.986,17.255-1.437,17.8,4.903c-0.437-0.068,8.189-2.273,7.479-1.466
         c1.7-0.711,10.518-4.723,12.599-4.82c0.274-0.013,4.603,0.905,3.068,2.315c-0.464,0.439,4.219,3.698,10.789,3.45
@@ -90,8 +89,8 @@ dp.on('changeMonth', function (e) {
         c0.219,0.108-8.244,6.681-7.506,3.314C383.556,170.4,374.241,168.566,373.011,167.238z"></path>
         <text transform="matrix(1 0 0 1 401.3984 165.8003)" fill="#FFFFFF">PE</text>
       </a>
-      <a href="#" id="state_al" class="state" data-state="al" xlink:href="">
-      <title>Alagoas</title>
+      <a href="#" id="state_al" class="state" cod-state="2700108" data-state="Alagoas" xlink:href="">
+        <title>Alagoas</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M413.953,169.018
         c3.78,3.313,9.424,5.505,12.547,5.491c3.229-0.013,5.009-3.328,7.421-4.794c1.177-0.712,10.297-1.93,9.174,1.042
         c-1.807,4.848-7.122,8.585-10.024,12.789c-2.792,2-3.423,7.093-6.354,1.864c-3.259,0.424-3.722-4.424-6.957-4.477
@@ -100,8 +99,8 @@ dp.on('changeMonth', function (e) {
         c-6.241,0-11.263-5.052-11.263-11.259C425.16,173.816,430.182,168.763,436.423,168.763z"></path>
         <text transform="matrix(1 0 0 1 429.7891 183.895)" fill="#FFFFFF">AL</text>
       </a>
-      <a href="#" id="state_rn" class="state" data-state="rn" xlink:href="">
-      <title>Rio Grande do Norte</title>
+      <a href="#" id="state_rn" class="state" cod-state="2400108" data-state="Rio Grande do Norte" xlink:href="">
+      	<title>Rio Grande do Norte</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M404.698,138.795
         c2.383-4.027,6.574-6.123,8.49-11.149c1.973-5.107,3.834-5.818,8.764-4.642c5.041,1.207,9.339,0.837,14.57,1.671
         c7.534,1.193,6.848,10.968,9.206,16.516c-1.919,1.096-13.972,0.521-15.064-1.657c-1.041-2.067-2.904,7.107-5.094,7.3
@@ -110,7 +109,7 @@ dp.on('changeMonth', function (e) {
         c-6.209,0-11.26-5.037-11.26-11.261C419.567,112.837,424.618,107.798,430.827,107.798z"></path>
         <text transform="matrix(1 0 0 1 422.541 123.9009)" fill="#FFFFFF">RN</text>
       </a>
-      <a href="#" id="state_ce" class="state" data-state="ce" xlink:href="">
+      <a href="#" id="state_ce" class="state" cod-state="2300108" data-state="Cear�" xlink:href="">
       <title>Cear�</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M372.379,104.409
         c0.437-1.368,2.961-3.627,1.043-5.025c12.106-1.328,17.581-0.849,27.66,6.723c4.026,3.054,6.822,5.574,10.571,9.147
@@ -121,7 +120,7 @@ dp.on('changeMonth', function (e) {
         C373.035,102.314,374.815,105.971,372.379,104.409z"></path>
         <text transform="matrix(1 0 0 1 386.8379 129.0347)" fill="#FFFFFF">CE</text>
       </a>
-      <a href="#" id="state_pi" class="state" data-state="pi" xlink:href="">
+      <a href="#" id="state_pi" class="state" cod-state="2200108" data-state="Piau�" xlink:href="">
       <title>Piau�</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M320.781,185.478
         c2.465-5.149-7.505-20.801-7.505-20.801s47.354-65.868,54.285-66.841c0.299-0.042,6.243,1.768,6.463,2.219
@@ -132,7 +131,7 @@ dp.on('changeMonth', function (e) {
         C328.176,198.748,327.409,180.727,320.781,185.478z"></path>
         <text transform="matrix(1 0 0 1 355.127 158.1045)" fill="#FFFFFF">PI</text>
       </a>
-      <a href="#" id="state_ma" class="state" data-state="ma" xlink:href="">
+      <a href="#" id="state_ma" class="state" cod-state="2100108" data-state="Maranh�o" xlink:href="">
       <title>Maranh�o</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M288.845,127.827
         c4.108-2.726,31.195-48.985,31.386-50.395c1.235,0.397,6.084,7.435,7.562,5.025c0.493,0.013-0.328,2.15-0.547,2.396
@@ -148,7 +147,7 @@ dp.on('changeMonth', function (e) {
         C290.983,125.675,290.983,128.044,288.845,127.827z"></path>
         <text transform="matrix(1 0 0 1 318.2754 126.7036)" fill="#FFFFFF">MA</text>
       </a>
-      <a href="#" id="state_ap" class="state" data-state="ap" xlink:href="">
+      <a href="#" id="state_ap" class="state" cod-state="1600108" data-state="Amap�" xlink:href="">
       <title>Amap�</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M225.198,39.089
         c3.274,1.165,3.985-1.315,6.572-1.74c3.616-0.603,5.683,2.725,9.037,2.067c4.055-0.78,7.093-8.025,7.314-11.598
@@ -157,7 +156,7 @@ dp.on('changeMonth', function (e) {
         C221.814,36.458,223.334,38.417,225.198,39.089z"></path>
         <text transform="matrix(1 0 0 1 245.9023 52.6099)" fill="#FFFFFF">AP</text>
       </a>
-      <a href="#" id="state_pa" class="state" data-state="pa" xlink:href="">
+      <a href="#" id="state_pa" class="state" cod-state="1500108" data-state="Par�" xlink:href="">
       <title>Par�</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M173.378,50.619
         c2.259,2.63,5.629-4.478,7.901-3.82c3.19,0.918,1.478-1.108,5.026-1.752c1.931,0.806,3.096,0.273,3.519-1.631
@@ -175,7 +174,7 @@ dp.on('changeMonth', function (e) {
         C319.302,76.912,319.74,78.76,319.139,77.664z"></path>
         <text transform="matrix(1 0 0 1 232.7725 122.5137)" fill="#FFFFFF">PA</text>
       </a>
-      <a href="#" id="state_rr" class="state" data-state="rr" xlink:href="">
+      <a href="#" id="state_rr" class="state" cod-state="1400108" data-state="Roraima" xlink:href="">
       <title>Roraima</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M113.18,24.107
         c-0.972-2.753-7.861-5.889-6.999-8.984c0.068-0.232,13.229,6.053,12.79,2.808c0.398,1.329,1.219,1.889,2.439,1.685
@@ -187,7 +186,7 @@ dp.on('changeMonth', function (e) {
         s-12.517-52.736-20.335-54.063C115.261,36.417,111.523,25.682,113.18,24.107z"></path>
         <text transform="matrix(1 0 0 1 136.2939 42.3862)" fill="#FFFFFF">RR</text>
       </a>
-      <a href="#" id="state_am" class="state" data-state="am" xlink:href="">
+      <a href="#" id="state_am" class="state" cod-state="1300108" data-state="Amazonas" xlink:href="">
       <title>Amazonas</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M10.078,136.412
         c1.15-4.972,4.258-10.394,8.215-13.105c4.41-3.027,7.656-5.71,13.105-6.082c2.165-0.149,10.216-5.75,11.983-2.984
@@ -208,7 +207,7 @@ dp.on('changeMonth', function (e) {
         c-8.601-4.381-16.61-8.981-26.088-11.05c-10.282-2.259-20.635-4.793-29.878-10.011C4.121,145.766,12.433,144.779,10.078,136.412z"></path>
         <text transform="matrix(1 0 0 1 98.1406 119.0591)" fill="#FFFFFF">AM</text>
       </a>
-      <a href="#" id="state_ac" class="state" data-state="ac" xlink:href="">
+      <a href="#" id="state_ac" class="state" cod-state="1200108" data-state="Acre" xlink:href="">
       <title>Acre</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M3.656,148.545
         c12.557,7.544,27.524,8.367,41.082,13.2c12.802,8.065,27.278,12.845,40.616,19.872c-2.834,1.205-7.587,4.382-9.983,6.395
@@ -218,7 +217,7 @@ dp.on('changeMonth', function (e) {
         c6.299-3.41-3.107-11.9-5.216-15.679c-0.52-0.918-3.588-4.655-3.629-5.957C1.642,150.174,6.612,151.968,3.656,148.545z"></path>
         <text transform="matrix(1 0 0 1 47.7017 184.9355)" fill="#FFFFFF">AC</text>
       </a>
-      <a href="#" id="state_ro" class="state" data-state="ro" xlink:href="">
+      <a href="#" id="state_ro" class="state" cod-state="1100108" data-state="Rond�nia" xlink:href="">
       <title>Rond�nia</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M83.34,180.232
         c0.931-1.574,5.341-4.668,6.312-4.656c1.355-0.067,2.671,0.138,3.958,0.603c3.012,1.44,2.039-1.135,5.341-0.123
@@ -231,7 +230,7 @@ dp.on('changeMonth', function (e) {
         c-0.384-6.081-1.028-1.986-3.382-1.903C94.336,180.686,85.957,181.671,83.34,180.232z"></path>
         <text transform="matrix(1 0 0 1 118.1299 195.3193)" fill="#FFFFFF">RO</text>
       </a>
-      <a href="#" id="state_mt" class="state" data-state="mt" xlink:href="">
+      <a href="#" id="state_mt" class="state" cod-state="5100108" data-state="Mato Grosso" xlink:href="">
       <title>Mato Grosso</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M142.237,173.962
         c4-0.316-1.888-6.452,5-5.738c7.914,0.808,16.295,0.328,24.279,0.218c1.629-0.013,8.902,1.288,7.395-1.833
@@ -247,7 +246,7 @@ dp.on('changeMonth', function (e) {
         C143.581,176.618,141.937,174.714,142.237,173.962z"></path>
         <text transform="matrix(1 0 0 1 200.0244 218.4175)" fill="#FFFFFF">MT</text>
       </a>
-      <a href="#" id="state_ms" class="state" data-state="ms" xlink:href="">
+      <a href="#" id="state_ms" class="state" cod-state="5000108" data-state="Mato Grosso do Sul" xlink:href="">
       <title>Mato Grosso do Sul</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M183.198,294.536
         c2.136-4.464,3.177-9.394,5.312-13.61c1.712-3.344-4.067-7.587-2.423-9.807c0.027-0.026,2.738,3.641,3.917,3.725
@@ -260,7 +259,7 @@ dp.on('changeMonth', function (e) {
         c0.932-2.847,1.411-9.912,0.453-11.856c-0.165-0.331-3.52-7.232-2.547-8.108C186.306,297.688,182.334,299.415,183.198,294.536z"></path>
         <text transform="matrix(1 0 0 1 213.2939 306.7236)" fill="#FFFFFF">MS</text>
       </a>
-      <a href="#" id="state_go" class="state" data-state="go" xlink:href="">
+      <a href="#" id="state_go" class="state" cod-state="5200108" data-state="Goi�s" xlink:href="">
       <title>Goi�s</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M237.768,270.519
         c0.628-2.904,1.835-7.396,4.709-8.766c1.015-1.644,1.754-5.147,2.275-5.586c2.408-2.247,3.889-3.783,6.63-4.656
@@ -277,7 +276,7 @@ dp.on('changeMonth', function (e) {
         c-3.724-0.604,1.04-3.231,0.22-4.109c-1.89-1.916-4.382,1.756-3.588-3.012C239.602,274.627,237.055,273.038,237.768,270.519z"></path>
         <text transform="matrix(1 0 0 1 266.9111 254.2139)" fill="#FFFFFF">GO</text>
       </a>
-      <a href="#" id="state_pr" class="state" data-state="pr" xlink:href="">
+      <a href="#" id="state_pr" class="state" cod-state="4100108" data-state="Paran�" xlink:href="">
       <title>Paran�</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M222.225,363.694
         c1.807-2.138,1.889-4.881,2.424-7.479c0.301-1.453,0.465-7.86,1.369-8.736c2.3-0.684,2.3-3.315,2.726-5.204
@@ -286,7 +285,7 @@ dp.on('changeMonth', function (e) {
         c-3.875-1.449-2.698-6.491-6.054-8.216C226.663,364.623,222.498,367.8,222.225,363.694z"></path>
         <text transform="matrix(1 0 0 1 248.4453 356.1045)" fill="#FFFFFF">PR</text>
       </a>
-      <a href="#" id="state_sc" class="state" data-state="sc" xlink:href="">
+      <a href="#" id="state_sc" class="state" cod-state="4200108" data-state="Santa Catarina" xlink:href="">
       <title>Santa Catarina</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M231.029,383.959
         c1.669-3.338-0.284-10.516,4.573-10.569c6.631-0.109,13.639,3.559,20.402,3.888c1.317,0.055,5.231,2.163,4.357-1.15
@@ -295,7 +294,7 @@ dp.on('changeMonth', function (e) {
         C276.085,411.866,233.534,382.918,231.029,383.959z"></path>
         <text transform="matrix(1 0 0 1 266.9111 387.7646)" fill="#FFFFFF">SC</text>
       </a>
-      <a href="#" id="state_rs" class="state" data-state="rs" xlink:href="">
+      <a href="#" id="state_rs" class="state" cod-state="4300108" data-state="Rio Grande do Sul" xlink:href="">
       <title>Rio Grande do Sul</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M191.236,416.881
         c0.52-2.684,7.38-8.409,9.477-10.351c0.37-0.359,8.599-10.08,9.174-8.329c-1.301-3.89,2.781-1.589,3.917-4.819
@@ -307,7 +306,7 @@ dp.on('changeMonth', function (e) {
         c-2.3-1.999-4.793-5.479-7.737-6.68c-3.478-1.367-5.615,5.145-9.052,0.821C189.168,418.854,190.332,418.032,191.236,416.881z"></path>
         <text transform="matrix(1 0 0 1 231.0313 414.4658)" fill="#FFFFFF">RS</text>
       </a>
-      <a href="#" id="state_sp" class="state" data-state="sp" xlink:href="">
+      <a href="#" id="state_sp" class="state" cod-state="3500108" data-state="S�o Paulo" xlink:href="">
       <title>S�o Paulo</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M239.3,330.554
         c3.26-4.356,9.56-5.039,11.531-10.792c1.369-3.942,3.889-8.818,6.135-13.036c1.561-2.957,7.749-7.121,10.517-8.65
@@ -320,7 +319,7 @@ dp.on('changeMonth', function (e) {
         C247.982,330.386,239.876,331.21,239.3,330.554z"></path>
         <text transform="matrix(1 0 0 1 280.6816 327.3193)" fill="#FFFFFF">SP</text>
       </a>
-      <a href="#" id="state_mg" class="state" data-state="mg" xlink:href="">
+      <a href="#" id="state_mg" class="state" cod-state="3100108" data-state="Minas Gerais" xlink:href="">
       <title>Minas Gerais</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M262.881,297.305
         c-1.696-5.094,15.531-19.882,18.844-13.421c5.531-7.367,15.886,1.588,19.773-3.944c0.988-1.367,3.015-1.453,3.725-2.957
@@ -340,7 +339,7 @@ dp.on('changeMonth', function (e) {
         c-4.708-0.353-5.53-1.613-9.858,0.631C262.993,300.562,262.336,299.274,262.881,297.305z"></path>
         <text transform="matrix(1 0 0 1 328.4063 286.4561)" fill="#FFFFFF">MG</text>
       </a>
-      <a href="#" id="state_rj" class="state" data-state="rj" xlink:href="">
+      <a href="#" id="state_rj" class="state" cod-state="3300108" data-state="Rio de Janeiro" xlink:href="">
       <title>Rio de Janeiro</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M332.886,337.429
         c-1.26-2.768,8.409-4.795,7.89-6.71c-3.177-1.864-4.602,1.148-6.63-2.959c4.274-0.686,9.533-4.49,13.831-3.562
@@ -354,7 +353,7 @@ dp.on('changeMonth', function (e) {
         c-6.211,0-11.263-5.054-11.263-11.264C343.831,323.634,348.883,318.613,355.094,318.613z"></path>
         <text transform="matrix(1 0 0 1 347.4648 334.6807)" fill="#FFFFFF">RJ</text>
       </a>
-      <a href="#" id="state_es" class="state" data-state="es" xlink:href="">
+      <a href="#" id="state_es" class="state" cod-state="3200108" data-state="Esp�rito Santo" xlink:href="">
       <title>Esp�rito Santo</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M367.119,308.834
         c1.044-1.999-0.298-5.451,1.841-6.326c3.697-1.453,3.858-0.467,5.941-4.49c0.767-1.563,3.999-5.807,2.848-7.835
@@ -366,7 +365,7 @@ dp.on('changeMonth', function (e) {
         c-6.212,0-11.263-5.049-11.263-11.261C370.654,289.777,375.705,284.723,381.917,284.723z"></path>
         <text transform="matrix(1 0 0 1 373.3047 300.4971)" fill="#FFFFFF">ES</text>
       </a>
-      <a href="#" id="state_df" class="state" data-state="df" xlink:href="">
+      <a href="#" id="state_df" class="state" cod-state="5300108" data-state="Distrito Federal" xlink:href="">
       <title>Distrito Federal</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M292.461,246.197
         c0,0,12.929-2.903,14.188,0c1.233,2.903,0.659,10.683-1.424,11.504c-2.08,0.849-14.296-1.806-14.023-3.313
@@ -375,7 +374,7 @@ dp.on('changeMonth', function (e) {
         c-6.209,0-11.261-5.053-11.261-11.263C289.475,243.377,294.523,238.34,300.735,238.34z"></path>
         <text transform="matrix(1 0 0 1 292.4141 254.2139)" fill="#FFFFFF">DF</text>
       </a>
-      <a href="#" id="state_pb" class="state" data-state="pb" xlink:href="">
+      <a href="#" id="state_pb" class="state" cod-state="2500108" data-state="Para�ba" xlink:href="">
       <title>Para�ba</title>
         <path stroke="#FFFFFF" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M401.575,141.096
         c2.081-3.081,16.791-6.82,19.117-4.616c0,1.918,7.259,1.686,10.133,2.712c-0.492,3.038,12.652,1.533,14.408,2.259
@@ -390,246 +389,16 @@ dp.on('changeMonth', function (e) {
     </g>
   </svg>
 
-
-<div class="parca">
-	<select name="select" id="seletory">
-		<option value="mg" data-stado="mg"> Minas Gerais</option> 
-		<option value="ac" data-stado="ac"> Acre</option> 
-		<option value="al" data-stado="al"> Alagoas</option> 
-		<option value="ap" data-stado="ap"> Amapá</option> 
-		<option value="am" data-stado="am"> Amazonas</option> 
-		<option value="ba" data-stado="ba"> Bahia</option> 
-		<option value="ce" data-stado="ce"> Ceará</option> 
-		<option value="df" data-stado="df"> Distrito Federal</option> 
-		<option value="es" data-stado="es"> Espírito Santo</option> 
-		<option value="go" data-stado="go"> Goiás</option> 
-		<option value="ma" data-stado="ma"> Maranhão</option> 
-		<option value="mt" data-stado="mt"> Mato Grosso</option> 
-		<option value="ms" data-stado="ms"> Mato Grosso do Sul</option> 
-		<option value="pa" data-stado="pa"> Pará</option> 
-		<option value="pb" data-stado="pb"> Paraíba</option> 
-		<option value="pr" data-stado="pr"> Paraná</option> 
-		<option value="pe" data-stado="pe"> Pernambuco</option> 
-		<option value="pi" data-stado="pi"> Piauí</option> 
-		<option value="rj" data-stado="rj"> Rio de Janeiro</option> 
-		<option value="rn" data-stado="rn"> Rio Grande do Norte</option> 
-		<option value="rs" data-stado="rs"> Rio Grande do Sul</option> 
-		<option value="ro" data-stado="ro"> Rondônia</option> 
-		<option value="rr" data-stado="rr"> Roraima</option> 
-		<option value="sc" data-stado="sc"> Santa Catarina</option> 
-		<option value="se" data-stado="se"> Sergipe</option> 
-		<option value="sp" data-stado="sp"> São Paulo</option> 
-		<option value="to" data-stado="to"> Tocantins</option> 
-	</select>
-
-	<div id="box_mg" data-info="mg" class="estado">
-		<h3>Minas Gerais</h3>
-		<ul>
-			<li>Lorem ipsum Minas Gerais</li>
-			<li>Lorem ipsum Minas Gerais</li>
-		</ul>
-	</div>
-	<div id="box_sp" data-info="sp" class="estado">
-		<h3>São Paulo</h3>
-			<ul>
-			<li>Lorem ipsum São Paulo</li>
-			<li>Lorem ipsum São Paulo</li>
-			</ul>
-	</div>
-	<div id="box_rj" data-info="rj" class="estado">
-		<h3>Rio de Janeiro</h3>
-		<ul>
-			<li>Lorem ipsum Rio de Janeiro</li>
-			<li>Lorem ipsum Rio de Janeiro</li>
-		</ul>
-	</div>
-	<div id="box_ac" data-info="ac" class="estado">
-		<h3>Acre</h3>
-		<ul>
-			<li>Lorem ipsum Acre</li>
-			<li>Lorem ipsum Acre</li>
-			<li>Lorem ipsum </li>
-			<li>Lorem ipsum Acre</li>
-		</ul>
-	</div>
-	<div id="box_al" data-info="al" class="estado">
-		<h3>Alagoas</h3>
-		<ul>
-			<li>Lorem ipsum Alagoas</li>
-			<li>Lorem ipsum Alagoas</li>
-		</ul>
-	</div>
-	<div id="box_ap" data-info="ap" class="estado">
-		<h3>Amapá</h3>
-		<ul>
-			<li>Lorem ipsum Amapá</li>
-			<li>Lorem ipsum Amapá</li>
-		</ul>
-	</div>
-	<div id="box_am" data-info="am" class="estado">
-		<h3>Amazonas</h3>
-		<ul>
-			<li>Lorem ipsum Amazonas</li>
-			<li>Lorem ipsum Amazonas</li>
-		</ul>
-	</div>
-	<div id="box_ba" data-info="ba" class="estado">
-		<h3>Bahia</h3>
-		<ul>
-			<li>Lorem ipsum Bahia</li>
-			<li>Lorem ipsum Bahia</li>
-		</ul>
-	</div>
-	<div id="box_ce" data-info="ce" class="estado">
-		<h3>Ceará</h3>
-		<ul>
-			<li>Lorem ipsum Ceará</li>
-			<li>Lorem ipsum Ceará</li>
-		</ul>
-	</div>
-	<div id="box_df" data-info="df" class="estado">
-		<h3>Distrito Federal</h3>
-		<ul>
-			<li>Lorem ipsum Distrito Federal</li>
-			<li>Lorem ipsum Distrito Federal</li>
-		</ul>
-	</div>
-	<div id="box_es" data-info="es" class="estado">
-		<h3>Espírito Santo</h3>
-		<ul>
-			<li>Lorem ipsum Espírito Santo</li>
-			<li>Lorem ipsum Espírito Santo</li>
-		</ul>
-	</div>
-	<div id="box_go" data-info="go" class="estado">
-		<h3>Goiás</h3>
-		<ul>
-			<li>Lorem ipsum Goiás</li>
-			<li>Lorem ipsum Goiás</li>
-		</ul>
-	</div>
-	<div id="box_ma" data-info="ma" class="estado">
-		<h3>Maranhão</h3>
-		<ul>
-			<li>Lorem ipsum Maranhão</li>
-			<li>Lorem ipsum Maranhão</li>
-		</ul>
-	</div>
-	<div id="box_mt" data-info="mt" class="estado">
-		<h3>Mato Grosso</h3>
-		<ul>
-			<li>Lorem ipsum Mato Grosso</li>
-			<li>Lorem ipsum Mato Grosso</li>
-		</ul>
-	</div>
-	<div id="box_ms" data-info="ms" class="estado">
-		<h3>Mato Grosso do Sul</h3>
-		<ul>
-			<li>Lorem ipsum Mato Grosso do Sul</li>
-			<li>Lorem ipsum Mato Grosso do Sul</li>
-		</ul>
-	</div>
-	<div id="box_pa" data-info="pa" class="estado">
-		<h3>Pará</h3>
-		<ul>
-			<li>Lorem ipsum Pará</li>
-			<li>Lorem ipsum Pará</li>
-		</ul>
-	</div>
-	<div id="box_pb" data-info="pb" class="estado">
-		<h3>Paraíba</h3>
-		<ul>
-			<li>Lorem ipsum Paraíba</li>
-			<li>Lorem ipsum Paraíba</li>
-		</ul>
-	</div>
-	<div id="box_pr" data-info="pr" class="estado">
-		<h3>Paraná</h3>
-		<ul>
-			<li>Lorem ipsum Paraná</li>
-			<li>Lorem ipsum Paraná</li>
-		</ul>
-	</div>
-	<div id="box_pe" data-info="pe" class="estado">
-		<h3>Pernambuco</h3>
-		<ul>
-			<li>Lorem ipsum Pernambuco</li>
-			<li>Lorem ipsum Pernambuco</li>
-		</ul>
-	</div>
-	<div id="box_pi" data-info="pi" class="estado">
-		<h3>Piauí</h3>
-		<ul>
-			<li>Lorem ipsum Piauí</li>
-			<li>Lorem ipsum Piauí</li>
-		</ul>
-	</div>
-	<div id="box_rn" data-info="rn" class="estado">
-		<h3>Rio Grande do Norte</h3>
-		<ul>
-			<li>Lorem ipsum Rio Grande do Norte</li>
-			<li>Lorem ipsum Rio Grande do Norte</li>
-		</ul>
-	</div>
-	<div id="box_rs" data-info="rs" class="estado">
-		<h3>Rio Grande do Sul</h3>
-		<ul>
-			<li>Lorem ipsum Rio Grande do Sul</li>
-			<li>Lorem ipsum Rio Grande do Sul</li>
-		</ul>
-	</div>
-	<div id="box_ro" data-info="ro" class="estado">
-		<h3>Rondônia</h3>
-		<ul>
-			<li>Lorem ipsum Rondônia</li>
-			<li>Lorem ipsum Rondônia</li>
-		</ul>
-	</div>
-	<div id="box_rr" data-info="rr" class="estado">
-		<h3>Roraima</h3>
-		<ul>
-			<li>Lorem ipsum Roraima</li>
-			<li>Lorem ipsum Roraima</li>
-		</ul>
-	</div>
-	<div id="box_sc" data-info="sc" class="estado">
-		<h3>Santa Catarina</h3>
-		<ul>
-			<li>Lorem ipsum Santa Catarina</li>
-			<li>Lorem ipsum Santa Catarina</li>
-		</ul>
-	</div>
-	<div id="box_se" data-info="se" class="estado">
-		<h3>Sergipe</h3>
-		<ul>
-			<li>Lorem ipsum Sergipe</li>
-			<li>Lorem ipsum Sergipe</li>
-		</ul>
-	</div>
-	<div id="box_to" data-info="to" class="estado">
-		<h3>Tocantins</h3>
-		<ul>
-			<li>Lorem ipsum Tocantins</li>
-			<li>Lorem ipsum Tocantins</li>
-		</ul>
-	</div>
+<div class="info-state">
 </div>
-
 
 <?php include_once './views/models/footer.html' ?>
 <!-- partial -->
   
 </body>
-<!--  scripts -->
-<script>
-    window.onload(() => {
 
-    })
-</script>
+
 <script  src="./views/mapa/script.js"></script>
-
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
-<!--  scripts -->
 </html>
