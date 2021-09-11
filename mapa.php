@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br" >
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
 <link rel="stylesheet" href="./views/mapa/style.css">
-<link rel="stylesheet" href="./views/datepicker/bootstrap-datepicker.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.pt-BR.js"></script>
+
 <style>
 
 	body{
@@ -24,29 +23,18 @@
 
 <?php include_once './views/models/header.html' ?>
 
-
-<p class="lead">
-  Selecione o mês e estado para checar as informações sobre o Bolsa Família e Auxilio Emergencial!
-</p>
+<div id="informacoes">
+<p class="lead">Selecione o mês e estado para checar as informações gerais sobre o Bolsa Família e Auxilio Emergencial!</p>
 <hr/>
+</div>
 
+
+<div id="seleciona-data">
 <input type="text" class="form-control col-xs-2" name="datepicker" id="datepicker" placeholder="Selecione o Mes" size="3"/>
+</div>
 
 
-<script>var dp=$("#datepicker").datepicker( {
-    format: "mm-yyyy",
-    startView: "months", 
-    minViewMode: "months",
-    startDate : new Date('2020-04-1'),
-    endDate : new Date('2021-07-1')
-
-});
-
-</script>
-
-
-
-	
+<div id="mapa">
   <svg version="1.1" id="map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="450px" height="460px" viewBox="0 0 450 460" enable-background="new 0 0 450 460" xml:space="preserve">
     <g>
       <a href="#" id="state_to" class="state" data-state="Tocantins" cod-state="1700108" xlink:href="">
@@ -388,17 +376,27 @@
       </a>
     </g>
   </svg>
-
-<div class="info-state">
 </div>
 
+<div class="info-state"></div>
+
+
 <?php include_once './views/models/footer.html' ?>
-<!-- partial -->
   
 </body>
 
+<script>var dp=$("#datepicker").datepicker( {
+    format: "mm-yyyy",
+    startView: "months", 
+    minViewMode: "months",
+    startDate : new Date('2020-04-1'),
+    endDate : new Date('2021-08-1')
 
+});
+</script>
 <script  src="./views/mapa/script.js"></script>
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
 </html>

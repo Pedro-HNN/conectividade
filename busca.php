@@ -15,15 +15,7 @@
 <body>
 <?php include_once './views/models/header.html' ?>
 
-<form action="" method="POST">
-    <input type="text" placeholder="Mes Referencia" name="mes">
-    <input type="text" placeholder="CPF titular" name="cpf">
-    <button value="submit">Pesquisar</button>
-</form>
 
-<h1>#TODO: FAZER SISTEMA DE BUSCA AQUI DO BOLSA E DO AUXILIO</h1>
-<h1>#TODO: FAZER RESULTADOS APARECEREM AQUI</h1>
-<h2>usar consultarAuxilioNis e consultarBolsaCpfNis, ambos estão na apiDocumentacao.php</h2>
 
 <?php include_once './views/models/footer.html' ?>
 </body>
