@@ -11,7 +11,7 @@ function montarSelectEstados() {
 function retornarCapital(estadoSigla){
     $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoSigla}/regioes-intermediarias`).done(data =>{
         console.log(data[0].id)
-        setTimeOut(()=>{$(`#selMunicipio option[name="${data[0].nome}"]`).val(data[0].id)},2000})
+        setTimeOut(()=>{$(`#selMunicipio option[name="${data[0].nome}"]`).val(data[0].id)},2000)
     })
 }
 
