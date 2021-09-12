@@ -9,6 +9,14 @@ $router->get('/', function(){
     die;
 });
 
+
+$router->get('/consulta', function(){
+    require '../scripts/jquery.php';
+    require '../scripts/bootstrap.php';
+    require '../views/consulta.php';
+    die;
+});
+
 //Endpoints Bolsa Familia
 $router->get('/consulta/bolsa/municipio', function(){
     $codigoIbge = $_REQUEST['codigoIbge'];
@@ -53,6 +61,7 @@ $router->get('/consulta/auxilio/benifeciario-municipio', function(){
     die;
 });
 
+
 $router->get('/consulta/auxilio/nis', function(){
     $codigoBenifeciario = $_REQUEST['codigoBenifeciario'];
     $codigoResponsavelFamiliar = $_REQUEST['codigoResponsavelFamiliar'];
@@ -71,4 +80,8 @@ $router->get('/consulta/auxilio/municipio', function(){
     $result = $apiController->consultarAuxilioMunicipio($codigoIbge, $mesAno, $pagina);
     echo json_encode($result);
     die;
+});
+
+$router->get('/consulta', function(){
+   
 });
