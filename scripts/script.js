@@ -49,6 +49,7 @@ function bolsaMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1) {
 }
 
 function auxilioMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1) {
+	anoMes = anoMes[0].toString()+anoMes[1]
 	$.ajax({
 		url: "/hackathon/public/api/consulta/auxilio/municipio",
 		type: "get",
@@ -58,6 +59,7 @@ function auxilioMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1) {
 			pagina: pagina
 		},
 		success: function (response) {
+			console.log(response)
 			response = JSON.parse(response)
 			if (response[0] != null) {
 				anoMes = response[0].dataReferencia.split('-')

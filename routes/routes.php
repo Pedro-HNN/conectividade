@@ -7,6 +7,16 @@ $router->get('/', function(){
     die;
 });
 
+$router->get('/consulta', function(){
+    require '../views/busca.php';
+    die;
+});
+
+
+
+
+//============ENDPOINTS API===================================================================================
+
 //Endpoints Bolsa Familia
 $router->get('/api/consulta/bolsa/municipio', function(){
     $codigoIbge = $_REQUEST['codigoIbge'];
@@ -62,6 +72,7 @@ $router->get('/api/consulta/auxilio/nis', function(){
 });
 
 $router->get('/api/consulta/auxilio/municipio', function(){
+    var_dump($_REQUEST);die;
     $codigoIbge = $_REQUEST['codigoIbge'];
     $mesAno = $_REQUEST['mesAno'];
     $pagina = $_REQUEST['pagina'];

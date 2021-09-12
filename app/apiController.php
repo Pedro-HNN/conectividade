@@ -29,6 +29,7 @@ class ApiController {
 
     //Auxilo
     function consultarAuxilioMunicipio($codigoIbge, $mesAno, $pagina){
+        echo 'teste';die;
         $result = $this->apiSerpro->consultarAuxilioMunicipio($codigoIbge, $mesAno, $pagina);
         return $result;
     }
