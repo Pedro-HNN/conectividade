@@ -3,8 +3,9 @@
 use App\ApiController;
 
 $router->get('/', function(){
-    require '../views/default.html';
+    require '../views/mapa.php';
     require '../scripts/jquery.php';
+    require '../scripts/bootstrap.js';
     echo json_encode($_REQUEST);
 });
 
