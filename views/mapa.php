@@ -5,7 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../views/style/style.css">
-  <style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+<style>
     * {
       margin: 0;
       padding: 0;
@@ -445,6 +453,18 @@
 <script src="../scripts/script.js"></script>
 <script src="../scripts/scriptIbge.js"></script>
 <script>
+  function verica(){
+    if($('#selEstados').val() != 'Selecione o Estado'){
+      if($('#selMunicipio').val() != 'Selecione o Municipio'){
+        return true
+      }else{
+        alert('Selecione o municipio!')
+      }
+    }else{
+      alert('Selecione o estado!')
+    }
+  }
+
   $("#datepicker").datepicker({
     format: "mm/yyyy",
     startView: "months",
@@ -453,12 +473,16 @@
     endDate: new Date('2021-08-1')
   });
 
-  $('#selEstados').change((a,b,c)=>{console.log(a,b,c)})
+  $('#selEstados').change(event =>{
+    estadoSigla = $(event.currentTarget).val()
+    montarSelectMunicipios(estadoSigla)
+  })
+
+  $("#datepicker").change(event =>{
+
+  })
 
   montarSelectEstados()
-
-  window.onload = ()=>{console.log('a')}
-  alert(window.onload)
 </script>
 
 </html>

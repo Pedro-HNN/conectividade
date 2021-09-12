@@ -1,6 +1,6 @@
 function montarSelectEstados() {
     $.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados').done(data => {
-        let htmlEstados = '<option>Selecione o estado</option>';
+        let htmlEstados = '<option>Selecione o Estado</option>';
         data.forEach(e => {
             htmlEstados += `<option value="${e.sigla}">${e.nome}</option>`
         });
@@ -9,12 +9,11 @@ function montarSelectEstados() {
 }
 
 function montarSelectMunicipios(sigla){
-    let htmlMunicipios = '<option>Selecione o municipio</option>';
-    $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${sigla}/distritos`).done(data => {
+    $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${sigla}/municipios`).done(data => {
+        let htmlMunicipios = '<option>Selecione o Municipio</option>';
         data.forEach(e => {
-            let municipio = e.municipio
-            htmlMunicipios += `<option value="${municipio.id}">${municipio.nome}</option>`
+            htmlMunicipios += `<option value="${e.id}">${e.nome}</option>`
+            $('#selMunicipio').html(htmlMunicipios)
         });
     })
-    return htmlMunicipios
 }
