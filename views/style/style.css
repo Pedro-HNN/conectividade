@@ -35,21 +35,3 @@
   text-indent: 1px;
   text-overflow: '';   
 }
-
-.container{
-  padding: 5%;
-}
-.php{
-  visibility: hidden;
-}
-.footer-custom{
-font-family: Verdana !important;
-font-weight: bold;
-}
-.navbar-custom {
-  background-color: #0094d9;
-}
-.navbar a{
-  font-family: Verdana !important;
-  font-weight: bold;
-}
