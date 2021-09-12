@@ -8,15 +8,15 @@ $router->get('/', function(){
 });
 
 
-$router->get('/consulta', function(){
+$router->get('/api/consulta', function(){
     require '../scripts/jquery.php';
     require '../scripts/bootstrap.php';
-    require '../views/consulta.php';
+    require '../views/api/consulta.php';
     die;
 });
 
 //Endpoints Bolsa Familia
-$router->get('/consulta/bolsa/municipio', function(){
+$router->get('/api/consulta/bolsa/municipio', function(){
     $codigoIbge = $_REQUEST['codigoIbge'];
     $mesAno = $_REQUEST['mesAno'];
     $pagina = $_REQUEST['pagina'];
@@ -26,7 +26,7 @@ $router->get('/consulta/bolsa/municipio', function(){
     die;
 });
 
-$router->get('/consulta/bolsa/cpf-nis', function(){
+$router->get('/api/consulta/bolsa/cpf-nis', function(){
     $anoMesCompetencia = $_REQUEST['anoMesCompetencia'];
     $anoMesReferencia = $_REQUEST['anoMesReferencia'];
     $codigo = $_REQUEST['codigo'];
@@ -37,7 +37,7 @@ $router->get('/consulta/bolsa/cpf-nis', function(){
     die;
 });
 
-$router->get('/consulta/bolsa/parcela-nis', function(){
+$router->get('/api/consulta/bolsa/parcela-nis', function(){
     $anoMesCompetencia = $_REQUEST['anoMesCompetencia'];
     $anoMesReferencia = $_REQUEST['anoMesReferencia'];
     $nis = $_REQUEST['nis'];
@@ -49,7 +49,7 @@ $router->get('/consulta/bolsa/parcela-nis', function(){
 });
 
 //Endpoinst Auxilio Emergencial
-$router->get('/consulta/auxilio/benifeciario-municipio', function(){
+$router->get('/api/consulta/auxilio/benifeciario-municipio', function(){
     $codigoIbge = $_REQUEST['codigoIbge'];
     $mesAno = $_REQUEST['mesAno'];
     $pagina = $_REQUEST['pagina'];
@@ -60,7 +60,7 @@ $router->get('/consulta/auxilio/benifeciario-municipio', function(){
 });
 
 
-$router->get('/consulta/auxilio/nis', function(){
+$router->get('/api/consulta/auxilio/nis', function(){
     $codigoBenifeciario = $_REQUEST['codigoBenifeciario'];
     $codigoResponsavelFamiliar = $_REQUEST['codigoResponsavelFamiliar'];
     $pagina = $_REQUEST['pagina'];
@@ -70,7 +70,7 @@ $router->get('/consulta/auxilio/nis', function(){
     die;
 });
 
-$router->get('/consulta/auxilio/municipio', function(){
+$router->get('/api/consulta/auxilio/municipio', function(){
     $codigoIbge = $_REQUEST['codigoIbge'];
     $mesAno = $_REQUEST['mesAno'];
     $pagina = $_REQUEST['pagina'];
@@ -80,6 +80,6 @@ $router->get('/consulta/auxilio/municipio', function(){
     die;
 });
 
-$router->get('/consulta', function(){
+$router->get('/api/consulta', function(){
    
 });

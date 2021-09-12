@@ -35,14 +35,14 @@ $(document).ready(function () {
 	});
 });
 
-function bolsaMunicipioAjax(estado, codigoIbge, anoMes) {
+function bolsaMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1) {
 	$.ajax({
-		url: "/hackathon/public/consulta/bolsa/municipio",
+		url: "/hackathon/public/api/consulta/bolsa/municipio",
 		type: "get", //send it through get method
 		data: {
 			codigoIbge: codigoIbge,
 			mesAno: anoMes,
-			pagina: '1'
+			pagina: pagina
 		},
 		success: function (response) {
 			response = JSON.parse(response)

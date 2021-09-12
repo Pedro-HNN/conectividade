@@ -453,7 +453,7 @@
 <script src="../scripts/script.js"></script>
 <script src="../scripts/scriptIbge.js"></script>
 <script>
-  function verica(){
+  function vericacao(){
     if($('#selEstados').val() != 'Selecione o Estado'){
       if($('#selMunicipio').val() != 'Selecione o Municipio'){
         return true
