@@ -8,24 +8,21 @@ use SerproApi;
 
 class ApiController {
 
-    public $apiSerpro;
-
-    public function __construct(){
-        $apiSerpro = new SerproApi($_SESSION['apiSerpro']['url'], $_SESSION['apiSerpro']['chave']);
-    }
-
     //BolsaFamilia
     function consultarBolsaMunicipio($codigoIbge, $mesAno, $pagina){
-        $result = $this->apiSerpro->consultarBolsaMunicipio($codigoIbge, $mesAno, $pagina);
+        $apiSerpro = new SerproApi($_SESSION['apiSerpro']['url'], $_SESSION['apiSerpro']['chave']);
+        $result = $apiSerpro->consultarBolsaMunicipio($codigoIbge, $mesAno, $pagina);
         return $result;
     }
 
     function consultarBolsaCpfNis($anoMesCompetencia, $anoMesRefencia, $codigo, $pagina){
+        $apiSerpro = new SerproApi($_SESSION['apiSerpro']['url'], $_SESSION['apiSerpro']['chave']);
         $result = $this->apiSerpro->consultarBolsaCpfNis($anoMesCompetencia, $anoMesRefencia, $codigo, $pagina);
         return $result;
     }
 
     function consultarBolsaSaqueNis($anoMesCompetencia, $anoMesRefencia, $codigo, $pagina){
+        $apiSerpro = new SerproApi($_SESSION['apiSerpro']['url'], $_SESSION['apiSerpro']['chave']);
         $result = $this->apiSerpro->consultarBolsaParcelaSacadaNis($anoMesCompetencia, $anoMesRefencia, $codigo, $pagina);
         return $result;
     }

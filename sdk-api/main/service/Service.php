@@ -36,7 +36,7 @@ class Service {
 
         $request = $client->createRequest($this->requestMethod,  $this->urlBase.$this->urlApi, array('query' => $query));
         $request->setHeaders($headers);
-    
+        
         try{
             $response = $client->send($request);
 
