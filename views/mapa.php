@@ -482,6 +482,16 @@
 
   })
 
+  $("#selMunicipio").change(event =>{
+    if(vericacao()){
+      estado = $('#selEstados').val()
+      codigoIbge = $('#selmunicipio').val()
+      anoMes = $('#datepicker').val()
+      pagina = $('#valPagina')
+      bolsaMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1)
+    }
+  })
+
   montarSelectEstados()
 </script>
 
