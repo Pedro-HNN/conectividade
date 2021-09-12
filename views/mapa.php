@@ -25,7 +25,7 @@
     }
     .container-xxl {
       margin-top: 20px;
-      min-height: 86%;
+      min-height: 61%;
     }
 
     .custom-col {
