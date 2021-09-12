@@ -1,4 +1,4 @@
-function montarSelectEstados() {
+async function montarSelectEstados() {
     $.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados').done(data => {
         let htmlEstados = '<option>Selecione o Estado</option>';
         data.forEach(e => {
@@ -8,14 +8,21 @@ function montarSelectEstados() {
     })
 }
 
-function retornarCapital(estadoSigla){
-    $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoSigla}/regioes-intermediarias`).done(data =>{
-        console.log(data[0].id)
-        setTimeOut(()=>{$(`#selMunicipio option[name="${data[0].nome}"]`).val(data[0].id)},2000)
+async function retornarCapital(estadoSigla){
+    await $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoSigla}/regioes-intermediarias`).done(data =>{
+        id = $(`#selMunicipio option[name="${data[0].nome}"]`).val()
+        $('#selMunicipio').val(id)
+        if (vericacao()) {
+            estado = $('#selEstados').val()
+            codigoIbge = $('#selMunicipio').val()
+            anoMes = $('#datepicker').val()
+            pagina = $('#valPagina')
+            bolsaMunicipioAjax(estado, codigoIbge, anoMes)
+          }
     })
 }
 
-function montarSelectMunicipios(sigla){
+async function montarSelectMunicipios(sigla){
     $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${sigla}/municipios`).done(data => {
         let htmlMunicipios = '<option>Selecione o Municipio</option>';
         data.forEach(e => {
@@ -24,4 +31,10 @@ function montarSelectMunicipios(sigla){
         $('#selMunicipio').html(htmlMunicipios)
         retornarCapital(sigla)
     })
+}
+
+async function capitalAjax(estadoSigla) {
+	var result;
+	await $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoSigla}/regioes-imediatas`).done(data => { result = data[0] })
+	return result
 }

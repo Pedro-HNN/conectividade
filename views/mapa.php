@@ -13,7 +13,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
-<style>
+  <style>
     * {
       margin: 0;
       padding: 0;
@@ -440,7 +440,11 @@
           <button id="btn-consultar" class="btn btn-primary btn-sm shadow p-3 mb-5 rounded" value="submit" style="background-color: #0094d9;border-color:#0094d9;margin-top:20px;">Consultar</button>
         </div>
 
-        <div id="info-state" class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;"></div>
+        <div id="info-state" class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
+          <div id="info-state-title"></div>
+          <div id="info-state-bolsa"></div>
+          <div id="info-state-auxilio"></div>
+        </div>
 
       </div>
     </div>
@@ -453,17 +457,21 @@
 <script src="../scripts/script.js"></script>
 <script src="../scripts/scriptIbge.js"></script>
 <script>
-  function vericacao(){
-    if($('#selEstados').val() != 'Selecione o Estado'){
-      if($('#selMunicipio').val() != 'Selecione o Municipio'){
+  //FUNÇÕES DA PAGINA
+
+  function vericacao() {
+    if ($('#selEstados').val() != 'Selecione o Estado') {
+      if ($('#selMunicipio').val() != 'Selecione o Municipio') {
         return true
-      }else{
+      } else {
         alert('Selecione o municipio!')
       }
-    }else{
+    } else {
       alert('Selecione o estado!')
     }
   }
+
+  //EVENTOS
 
   $("#datepicker").datepicker({
     format: "mm/yyyy",
@@ -473,26 +481,50 @@
     endDate: new Date('2021-08-1')
   });
 
-  $('#selEstados').change(event =>{
+  $('#selEstados').change(event => {
     estadoSigla = $(event.currentTarget).val()
+
+    atualizarData()
+    atualizarMapa(estadoSigla)
     montarSelectMunicipios(estadoSigla)
-  })
-
-  $("#datepicker").change(event =>{
 
   })
 
-  $("#selMunicipio").change(event =>{
-    if(vericacao()){
-      estado = $('#selEstados').val()
-      codigoIbge = $('#selmunicipio').val()
-      anoMes = $('#datepicker').val()
-      pagina = $('#valPagina')
-      bolsaMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1)
-    }
+  $("#datepicker").change(event => {
   })
 
-  montarSelectEstados()
+  $("#selMunicipio").change(event => {
+    atualizarData()
+    if (vericacao()) {
+            estado = $('#selEstados').val()
+            codigoIbge = $('#selMunicipio').val()
+            anoMes = $('#datepicker').val()
+            pagina = $('#valPagina')
+            bolsaMunicipioAjax(estado, codigoIbge, anoMes)
+          }
+  })
+
+  $('#btn-consultar').click(function() {
+    var estado = $('#select-estados option:selected').text(); //pega nome do estado
+    var codigoIbge = $('#select-estados').val(); //pega código IBGE para as consultas API
+    var anoMes = $('#datepicker').val(); //pega mês e ano
+
+    bolsaMunicipioAjax(estado, codigoIbge, anoMes)
+  });
+
+  $('#map .state').click(event => {
+    var estadoSigla = $(event.currentTarget).attr('cod-state');
+    atualizarMapa(estadoSigla)
+    $('#selEstados').val(estadoSigla)
+    $('#selEstados').trigger('change')
+    montarSelectMunicipios(estadoSigla)
+    retornarCapital(estadoSigla)
+    atualizarData()
+  });
+
+  window.onload = () => {
+    montarSelectEstados()
+  }
 </script>
 
 </html>

@@ -52,7 +52,6 @@ $router->get('/api/consulta/auxilio/benifeciario-municipio', function(){
 });
 
 $router->get('/api/consulta/auxilio/nis', function(){
-
     $codigoBenifeciario = $_REQUEST['codigoBenifeciario'];
     $codigoResponsavelFamiliar = $_REQUEST['codigoResponsavelFamiliar'];
     $pagina = $_REQUEST['pagina'];
