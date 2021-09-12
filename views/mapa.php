@@ -23,7 +23,7 @@
     body {
       height: 100%;
     }
-    .container {
+    .container-xxl {
       margin-top: 20px;
       min-height: 86%;
     }
@@ -47,7 +47,7 @@
 
   <?php include_once 'header.html' ?>
 
-  <div class="container ">
+  <div class="container-xxl">
     <div class="row">
 
       <div id="informacoes" class="col-xl-4 custom-col " align="center">
@@ -407,7 +407,7 @@
       </div>
 
       <div id="seleciona-data" class="col-xl-4 custom-col" align="center">
-        <div class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
+        <div class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 20rem;margin-top:20px;border-color:#0094d9;">
 
           <h2>Região e Data</h2>
 
