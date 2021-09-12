@@ -3,10 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name=�viewport� content=�width=device-width, initial-scale="1.0">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../views/style/style.css">
-
   <style>
     * {
       margin: 0;
@@ -455,7 +453,7 @@
     endDate: new Date('2021-08-1')
   });
 
-  // $('#selEstados').change((a,b,c)=>{console.log(a,b,c)})
+  $('#selEstados').change((a,b,c)=>{console.log(a,b,c)})
 
   montarSelectEstados()
 

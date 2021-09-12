@@ -3,10 +3,10 @@
 use App\ApiController;
 
 $router->get('/', function(){
-    require '../views/mapa.php';
     require '../scripts/jquery.php';
     require '../scripts/bootstrap.php';
-    echo json_encode($_REQUEST);
+    require '../views/mapa.php';
+    die;
 });
 
 //Endpoints Bolsa Familia

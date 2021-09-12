@@ -1,2 +1,2 @@
 
-<script src="../vendor/components/jquery/jquery.js"></script>
+<script src="../vendor/components/jquery/jquery.min.js"></script>
