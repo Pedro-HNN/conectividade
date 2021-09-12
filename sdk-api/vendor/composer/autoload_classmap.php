@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'org\\gov\\br\\sdk\\ControllerAPI' => $baseDir . '/main/ControllerAPI.php',
     'org\\gov\\br\\sdk\\entity\\request\\AuxilioBenifeciarioMunicipioRequest' => $baseDir . '/main/entity/request/AuxilioBenifeciarioMunicipioRequest.php',
     'org\\gov\\br\\sdk\\entity\\request\\AuxilioMunicipioRequest' => $baseDir . '/main/entity/request/AuxilioMunicipioRequest.php',

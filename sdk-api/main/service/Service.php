@@ -2,7 +2,6 @@
 
 namespace org\gov\br\sdk\service;
 
-use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
