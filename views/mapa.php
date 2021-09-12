@@ -428,7 +428,7 @@
           </div>
         </div>
         <div class="select-responsivo">
-          <button id="btn-consultar" class="btn btn-sm shadow p-3 mb-5 rounded" value="submit" style="background-color: #0094d9;border-color:#0094d9;margin-top:20px;">Consultar</button>
+          <button id="btn-consultar" class="btn btn-sm shadow p-3 mb-5 rounded" value="submit" style="background-color: #0094d9;border-color:#0094d9;margin-top:5px;color:#ffffff;">Consultar</button>
         </div>
 
         <div id="info-state" class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;"></div>
