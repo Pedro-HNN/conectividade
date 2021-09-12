@@ -1,7 +1,37 @@
 (function($) {
 	
+	var dadoProvisorio = [
+		{
+			"id": 125307830,
+			"dataReferencia": "2021-07-01",
+			"municipio": {
+				"codigoIBGE": "5221858",
+				"nomeIBGE": "VALPARAÍSO DE GOIÁS",
+				"codigoRegiao": "5",
+				"nomeRegiao": "CENTRO-OESTE",
+				"pais": "BRASIL",
+				"uf": {
+					"sigla": "GO",
+					"nome": "GOIÁS"
+				}
+			},
+			"tipo": {
+				"id": 6,
+				"descricao": "Auxílio Emergencial",
+				"descricaoDetalhada": "Auxílio Emergencial"
+			},
+			"valor": 8400.00,
+			"quantidadeBeneficiados": 3
+		}
+	];
+	
+	var valorBolsa = dadoProvisorio[0].valor;//valor total do Bolsa Família
+	var beneficiariosBolsa = dadoProvisorio[0].quantidadeBeneficiados;//quantidade de beneficiarios Bolsa Família
+	
+	var valorAuxilio = dadoProvisorio[0].valor;//valor total do auxilio
+	var beneficiariosAuxilio = dadoProvisorio[0].quantidadeBeneficiados;//quantidade de beneficiarios Auxilio
+
 	$(document).ready(function(){
-		//toda vez que o mapAa � clicado
 		$('#map .state').click(function(){
 			var estado = $(this).attr('data-state');//pega nome do estado
 			var codigoIBGE = $(this).attr('cod-state');//pega código IBGE para as consultas API
@@ -20,12 +50,6 @@
 				var mes = anoMes[0];
 
 				var anoMes = anoMes[1]+anoMes[0];
-				
-				var valorBolsa;//valor total do Bolsa Família
-				var beneficiariosBolsa;//quantidade de beneficiarios Bolsa Família
-				
-				var valorAuxilio;//valor total do auxilio
-				var beneficiariosAuxilio;//quantidade de beneficiarios Auxilio
 				
 				if(ano < 2020 | ano == 2020 & mes < 4){
 					
@@ -56,12 +80,6 @@
 				var mes = anoMes[0];
 				
 				var anoMes = anoMes[1]+anoMes[0];
-		
-				var valorBolsa;//valor total do Bolsa Família
-				var beneficiariosBolsa;//quantidade de beneficiarios Bolsa Família
-				
-				var valorAuxilio;//valor total do auxilio
-				var beneficiariosAuxilio;//quantidade de beneficiarios Auxilio
 				
 				if(ano < 2020 | ano == 2020 & mes < 4){
 					

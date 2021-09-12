@@ -13,7 +13,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
 
 <style>
-
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height:100%;
+        }
+        
     	@media all and (min-width:750px) {
              .select-responsivo{
                 display: none;
@@ -27,6 +34,7 @@
         }
         .container{
             margin-top:20px;
+            min-height:61%;
         }
         .custom-col{
             margin-bottom:20px;
@@ -39,11 +47,11 @@
 </style> 
 
 </head>
-<body class="overflow-auto">
+<body class="overflow-auto ">
 
 <?php include_once './views/models/header.html' ?>
 
-<div class="container">
+<div class="container ">
 	<div class="row">
 
 		<div id="informacoes" class="col-xl-4 custom-col " align="center">
@@ -402,36 +410,35 @@
             </div>
             
             <div class="select-responsivo" align="center">
-                FAZER SISTEMA PARA RECOLHER DADOS DO FORMS E DO CALENDARIO E RECEBER OS DADOS DA API
                 <select id="select-estados"class="form-control custom-form shadow p-3 mb-5 bg-white rounded" placeholder="Selecione o Estado" style="border-color: #0094d9;">
                 	<option value='null' selected> Selecione o Estado</option>
-                	<option value="1200108" data-state="Acre"> Acre</option> 
-                	<option value="2700108" data-state="Alagoas"> Alagoas</option> 
-                	<option value="1600108" data-state="Amapá"> Amapá</option> 
-                	<option value="1300108" data-state="Amazonas"> Amazonas</option> 
-                	<option value="2900108" data-state="Bahia"> Bahia</option> 
-                	<option value="2300108" data-state="Ceará"> Ceará</option> 
-                	<option value="5300108" data-state="Distrito Federal"> Distrito Federal</option> 
-                	<option value="3200108" data-state="Espírito Santo"> Espírito Santo</option> 
-                	<option value="5200108" data-state="Goiás"> Goiás</option> 
-                	<option value="2100108" data-state="Maranhão"> Maranhão</option> 
-                	<option value="5100108" data-state="Mato Grosso"> Mato Grosso</option> 
-                	<option value="5000108" data-state="Mato Grosso do Sul"> Mato Grosso do Sul</option>
-                	<option value="3100108" data-state="Minas Gerais"> Minas Gerais</option>  
-                	<option value="1500108" data-state="Pará"> Pará</option> 
-                	<option value="2500108" data-state="Paraíba"> Paraíba</option> 
-                	<option value="4100108" data-state="Paraná"> Paraná</option> 
-                	<option value="2600108" data-state="Pernambuco"> Pernambuco</option> 
-                	<option value="2200108" data-state="Piauí"> Piauí</option> 
-                	<option value="3300108" data-state="Rio de Janeiro"> Rio de Janeiro</option> 
-                	<option value="2400108" data-state="Rio Grande do Norte"> Rio Grande do Norte</option> 
-                	<option value="4300108" data-state="Rio Grande do Sul"> Rio Grande do Sul</option> 
-                	<option value="1100108" data-state="Rondônia"> Rondônia</option> 
-                	<option value="1400108" data-state="Roraima"> Roraima</option> 
-                	<option value="4200108" data-state="Santa Catarina"> Santa Catarina</option> 
-                	<option value="2800108" data-state="Sergipe"> Sergipe</option> 
-                	<option value="3500108" data-state="São Paulo"> São Paulo</option> 
-                	<option value="1700108" data-state="Tocantins"> Tocantins</option> 
+                	<option value="1200108" > Acre</option> 
+                	<option value="2700108" > Alagoas</option> 
+                	<option value="1600108" > Amapá</option> 
+                	<option value="1300108" > Amazonas</option> 
+                	<option value="2900108" > Bahia</option> 
+                	<option value="2300108" > Ceará</option> 
+                	<option value="5300108" > Distrito Federal</option> 
+                	<option value="3200108" > Espírito Santo</option> 
+                	<option value="5200108" > Goiás</option> 
+                	<option value="2100108" > Maranhão</option> 
+                	<option value="5100108" > Mato Grosso</option> 
+                	<option value="5000108" > Mato Grosso do Sul</option>
+                	<option value="3100108" > Minas Gerais</option>  
+                	<option value="1500108" > Pará</option> 
+                	<option value="2500108" > Paraíba</option> 
+                	<option value="4100108" > Paraná</option> 
+                	<option value="2600108" > Pernambuco</option> 
+                	<option value="2200108" > Piauí</option> 
+                	<option value="3300108" > Rio de Janeiro</option> 
+                	<option value="2400108" > Rio Grande do Norte</option> 
+                	<option value="4300108" > Rio Grande do Sul</option> 
+                	<option value="1100108" > Rondônia</option> 
+                	<option value="1400108" > Roraima</option> 
+                	<option value="4200108" > Santa Catarina</option> 
+                	<option value="2800108" > Sergipe</option> 
+                	<option value="3500108" > São Paulo</option> 
+                	<option value="1700108" > Tocantins</option> 
                 </select>
             </div>   
         </div>
