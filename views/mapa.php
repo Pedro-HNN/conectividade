@@ -53,7 +53,7 @@
       <div id="informacoes" class="col-xl-4 custom-col " align="center">
         <div class="card custom-card shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem; border-color: #0094d9;">
           <div class="card-body text-dark ">
-            <h5 class="card-title">Conheça nossa platafora [nome do projeto aqui]</h5>
+            <h5 class="card-title">Conheça nossa platafora +Conectividade</h5>
             <hr />
             <p class="card-text">Apenas com um clique você consegue ver a quantidade de beneficiados pelo Bolsa Família e Auxilio Emergencial!<br>Escolha o mês e selecione seu estado!<br><br>Entre em <a href="./busca.php">Veja sua Situação</a> para ver sua situação referente ao Bolsa Família e Auxilio Emergencial com simplicidade e praticidade!</p>
           </div>
@@ -426,9 +426,6 @@
           <div class="cardRegiao">
             <input type="text" class="btn btn-primary btn-lg cardItemRegiao" name="datepicker" id="datepicker" placeholder="Selecione a Data" size="3" style="border-color: #0094d9;" />
           </div>
-        </div>
-        <div class="select-responsivo">
-          <button id="btn-consultar" class="btn btn-primary btn-sm shadow p-3 mb-5 rounded" value="submit" style="background-color: #0094d9;border-color:#0094d9;margin-top:20px;">Consultar</button>
         </div>
 
         <div id="info-state" class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
