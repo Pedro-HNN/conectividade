@@ -32,7 +32,7 @@
                             <h5 class="card-title">Pesquise aqui sua situação do Bolsa Família!</h5>
                             <hr />
                             <div class="form-group">
-                                <input type="text" class="btn btn-lg" id="cpf-nis-bolsa" placeholder="Digite seu CPF!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;" />
+                                <input type="text" class="btn btn-lg" id="cpf-nis-bolsa" placeholder="Digite seu CPF ou NIS!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;" />
                                 <input type="text" class="btn btn-lg " name="datepicker" id="datepicker" placeholder="Mês Competência" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;margin-top:5px;" />
                                 <button id="btn-consultar" class="btn btn-lg shadow p-4 lg-5 rounded" value="submit" style="background-color: #0094d9;border-color:#0094d9;margin-top:5px;color:#ffffff;">Consultar</button>
                             </div>
