@@ -25,32 +25,28 @@ function bolsaMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1) {
 			pagina: pagina
 		},
 		success: function (response) {
-			try {
-				response = JSON.parse(response)
-				console.log(response)
-				if (response[0] != null) {
-					$('#info-state span').html('')
-					anoMes = response[0].dataReferencia.split('-')
-					$('#info-state').css({ 'display': 'block' });
+			response = JSON.parse(response)
+			if (response[0] != null) {
+				$('#info-state span').html('')
+				anoMes = response[0].dataReferencia.split('-')
+				$('#info-state').css({ 'display': 'block' });
 
-					var nomeMunicipio = response[0].municipio.nomeIBGE
+				var nomeMunicipio = response[0].municipio.nomeIBGE
 
-					var ano = anoMes[0];
-					var mes = anoMes[1];
+				var ano = anoMes[0];
+				var mes = anoMes[1];
+				
+				var valorBolsa = response[0].valor;
+				var beneficiariosBolsa = response[0].quantidadeBeneficiados;
+				
+				$('#info-state-title').html(`<h2>${estado} ${mes}/${ano}</h2></br><h5>(${nomeMunicipio})</h5>`)
+				$('#info-state-bolsa').html(`<hr/><h3>BOLSA FAMÍLIA</h3><ul style="text-align:left;"><li>Quantidade de Benificiários: ${beneficiariosBolsa}</li><li>Total de dinheiro usado:${valorBolsa}</li></ul>`);
 
-					var valorBolsa = response[0].valor;
-					var beneficiariosBolsa = response[0].quantidadeBeneficiados;
-
-					$('#info-state-title').html(`<h2>${estado} ${mes}/${ano}</h2></br><h5>(${nomeMunicipio})</h5>`)
-					$('#info-state-bolsa').html(`<hr/><h3>BOLSA FAMÍLIA</h3><ul style="text-align:left;"><li>Quantidade de Benificiários: ${beneficiariosBolsa}</li><li>Total de dinheiro usado:${valorBolsa}</li></ul>`);
-
-					if (!(ano <= 2020 & mes < 4)) {
-						auxilioMunicipioAjax(estado, codigoIbge, anoMes, pagina)
-					} else {
-						$('#info-state-auxilio').hide()
-					}
-				} else {
-					$('#info-state span').html('<h2>Sem resultado</h2>')
+				
+				if (!(ano <= 2020 & mes < 4)) {
+					auxilioMunicipioAjax(estado, codigoIbge, anoMes, pagina)	
+				}else{
+					$('#info-state-auxilio').hide()
 				}
 			} catch (exception) {
 				console.log('error bolsa municipio')
@@ -119,14 +115,23 @@ function bolsaCpfNisAjax(anoMesCompetencia, anoMesReferencia, codigo, pagina = 1
 			response = JSON.parse(response)
 			console.log(response)
 			if (response[0] != null) {
+				anoMes = response[0].dataReferencia.split('-')
+				$('#info-state').css({ 'display': 'block' });
 
-				var valorBolsa = response[0].valor;//valor total do Bolsa Família
-				var numeroBeneficiarios = response[0].quantidadeDependentes;//quantidade de beneficiarios Bolsa Família
-				var nomeTitular = response[0].titularBolsaFamilia.nome;
-				$('#cpf').val(response[0].titularBolsaFamilia.cpfFormatado)
+				var nomeMunicipio = response[0].municipio.nomeIBGE
 
-				alert(json_decode(response[0]))
+				var ano = anoMes[0];
+				var mes = anoMes[1];
 
+				var valorAuxilio = response[0].valor;
+				var beneficiariosAuxilio = response[0].quantidadeBeneficiados;
+				
+				$('#info-state-title').html(`<h2>${estado} ${mes}/${ano}</h2></br><h5>(${nomeMunicipio})</h5>`)
+				$('#info-state-auxilio').html(`<hr/><h3>AUXILIO EMERGENCIAL</h3><ul style="text-align:left;"><li>Quantidade de Benificiários: ${beneficiariosAuxilio}</li><li>Total de dinheiro usado:${valorAuxilio}</li></ul>`);
+
+				
+			} else {
+				$('#info-state').html('<h2>Sem resultado</h2>')
 			}
 		},
 
