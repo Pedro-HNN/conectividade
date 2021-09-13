@@ -27,7 +27,19 @@ html, body {
 #resultado-auxilio {
 	display: none;
 }
+#auxilio-info{
+	max-height: 50vh;
+    overflow: auto;
+}
 
 h5 {
 	font-size: large;
+}
+
+.aux-result-card{
+	text-align: left;
+    border-style: ridge;
+    border-color: azure;
+    padding: 10px;
+	margin: 0px 0px 10px 0px;
 }

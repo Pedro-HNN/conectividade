@@ -37,8 +37,8 @@
                             <h5 class="card-title">Pesquise aqui sua situação do Auxilio Emergencial!</h5>
                             <hr />
                             <div class="form-group">
-                                <input type="text" class="btn btn-lg " id="nis-auxilio" placeholder="NIS do Beneficiário!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;" />
-                                <input type="text" class="btn btn-lg " id="nis-auxilio" placeholder="NIS do Responsável!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;margin-top:5px;" />
+                                <input type="text" class="btn btn-lg " id="nis-beneficiario" placeholder="NIS do Beneficiário!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;" />
+                                <input type="text" class="btn btn-lg " id="nis-responsavel" placeholder="NIS do Responsável!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;margin-top:5px;" />
                                 <button id="btn-consultar" class="btn btn-lg shadow p-4 lg-5 rounded" value="submit" style="background-color: #0094d9;border-color:#0094d9;margin-top:5px;color:#ffffff;">Consultar</button>
                             </div>
                         </div>
@@ -46,15 +46,9 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div id="resultado-bolsa" align="center">
-                    <div class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
-                        <div id="nome"></div>
-                        <div id="estado"></div>
-                        <div id="parcela">
-                            <div id="nome-beneficiario"></div>
-                            <div id="valor-parcela"></div>
-                            <div id="numero-parcela"></div>
-                            <div id="enquadramento-auxilio"></div>
+                <div id="resultado-auxilio" align="center">
+                    <div id="auxilio-info" class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
+        
                         </div>
                     </div>
                 </div>
@@ -79,6 +73,26 @@
         startDate: new Date('2013-01-20'),
         endDate: new Date('2021-08-1')
     });
+
+    function validar(){
+        if($('#nis-beneficiario')!='' && $('#nis-responsavel').val()!=''){
+            return true
+        }else{
+            alert('Informe o NIS do responsavel ou do beneficiario.')
+        }
+    }
+
+    function submit(){
+        if(validar()){
+            nisBeneficiario = $('#nis-beneficiario').val()
+            nisResponsavel = $('#nis-responsavel').val()
+            auxilioNisAjax(nisBeneficiario,nisResponsavel)
+        }
+    }
+
+    $('#btn-consultar').click(()=>{
+        submit()
+    })
 </script>
 
 </html>

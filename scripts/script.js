@@ -150,7 +150,7 @@ function auxilioNisAjax(codigoBenifeciario, codigoResponsavelFamiliar, pagina = 
         },
         success: function (response) {
             arrayResponse = JSON.parse(response)
-
+			console.log(arrayResponse)
 			var html = ''
 
 			arrayResponse.forEach(element => {
@@ -174,7 +174,7 @@ function auxilioNisAjax(codigoBenifeciario, codigoResponsavelFamiliar, pagina = 
 				html+=`</ul>`
 				html+='</div>'
 			});
-
+			$('#resultado-auxilio').show()
             $('#auxilio-info').html(html)
         },
         error: function (xhr) {
