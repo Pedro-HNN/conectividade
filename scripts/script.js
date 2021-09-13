@@ -104,9 +104,10 @@ function auxilioMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1) {
 }
 
 function bolsaCpfNisAjax(anoMesCompetencia, anoMesReferencia, codigo, pagina = 1) {
+	console.log(anoMesCompetencia, anoMesReferencia, codigo, pagina)
     $.ajax({
         url: "/hackathon/public/api/consulta/bolsa/cpf-nis",
-        type: "get", //send it through get method
+        type: "get",
         data: {
             anoMesCompetencia: anoMesCompetencia,
             anoMesReferencia: anoMesReferencia,
@@ -114,17 +115,19 @@ function bolsaCpfNisAjax(anoMesCompetencia, anoMesReferencia, codigo, pagina = 1
             pagina: pagina
         },
         success: function (response) {
-            response = JSON.parse(response)
-            console.log(response)
+			console.log(response)
+			response = JSON.parse(response)
             if (response[0] != null) {
 
-                var valorBolsa = response[0].valor;//valor total do Bolsa Família
-                var quantidadeDependentes = response[0].quantidadeDependentes;//quantidade de beneficiarios Bolsa Família
+                var valorBolsa = response[0].valor;
+                var quantidadeDependentes = response[0].quantidadeDependentes;
                 var nomeTitular = response[0].titularBolsaFamilia.nome;
 				var cpf = response[0].titularBolsaFamilia.cpfFormatado
 				var nis = response[0].titularBolsaFamilia.nis
 				var data = response[0].dataMesCompetencia.split('-')
 				data = data[2]+"/"+data[1]+"/"+data[0]
+
+				$('#resultado-bolsa').show()
 
 				$('#bolsa-info').html('')
                 $('#bolsa-info').html(`<h2>${nomeTitular}</h2></br><ul style="text-align:left;"><li>CPF: ${cpf}</li><li>NIS: ${nis}</li><li>Data: ${data}</li><li>valor: ${valorBolsa}</li><li>Quantidade dependentes: ${quantidadeDependentes}</li>`)
@@ -133,7 +136,7 @@ function bolsaCpfNisAjax(anoMesCompetencia, anoMesReferencia, codigo, pagina = 1
         error: function (xhr) {
             alert('Erro, contate o adm');
         }
-    });
+    })
 }
 
 function auxilioNisAjax(codigoBenifeciario, codigoResponsavelFamiliar, pagina = 1){

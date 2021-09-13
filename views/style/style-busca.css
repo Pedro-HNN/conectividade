@@ -21,7 +21,7 @@ html, body {
 }
  
 #resultado-bolsa {
-	display: none !important;
+	display: none;
 }
 
 #resultado-auxilio {

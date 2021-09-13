@@ -14,7 +14,7 @@ $router->get('/consulta/auxilio', function(){
 
 
 $router->get('/consulta/bolsa', function(){
-    require '../views/buscaConsulta.php';
+    require '../views/buscaBolsa.php';
     die;
 });
 

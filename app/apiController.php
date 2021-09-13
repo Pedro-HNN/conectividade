@@ -15,9 +15,9 @@ class ApiController {
         return $result;
     }
 
-    function consultarBolsaCpfNis($anoMesCompetencia, $anoMesRefencia, $codigo, $pagina){
+    function consultarBolsaCpfNis($anoMesCompetencia, $anoMesReferencia, $codigo, $pagina){
         $apiSerpro = new SerproApi($_SESSION['apiSerpro']['url'], $_SESSION['apiSerpro']['chave']);
-        $result = $apiSerpro->consultarBolsaCpfNis($anoMesCompetencia, $anoMesRefencia, $codigo, $pagina);
+        $result = $apiSerpro->consultarBolsaCpfNis($anoMesCompetencia, $anoMesReferencia, $codigo, $pagina);
         return $result;
     }
 

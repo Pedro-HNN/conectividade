@@ -3,14 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../views/style/style-busca.css">
+    <link rel="stylesheet" href="../../views/style/style-busca.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -33,7 +31,7 @@
                             <h5 class="card-title">Pesquise aqui sua situação do Bolsa Família!</h5>
                             <hr />
                             <div class="form-group">
-                                <input type="text" class="btn btn-lg" id="cpf-bolsa" placeholder="Digite seu CPF!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;" />
+                                <input type="text" class="btn btn-lg" id="cpf-nis-bolsa" placeholder="Digite seu CPF!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;" />
                                 <input type="text" class="btn btn-lg " name="datepicker" id="datepicker" placeholder="Mês Competência" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;margin-top:5px;" />
                                 <button id="btn-consultar" class="btn btn-lg shadow p-4 lg-5 rounded" value="submit" style="background-color: #0094d9;border-color:#0094d9;margin-top:5px;color:#ffffff;">Consultar</button>
                             </div>
@@ -45,10 +43,7 @@
             	<div id="resultado-bolsa" align="center">
                 	<div class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
                         <div id="bolsa-info">
-                            <div id="nome"></div>
-                            <div id="estado"></div>
-                            <div id="valor"></div>
-                            <div id="dependentes"></div>
+                         
                         </div>
                     </div>
             	</div>
@@ -61,12 +56,7 @@
     <?php include_once 'footer.html' ?>
 
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-<script src="../scripts/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+<script src="../../scripts/script.js"></script>
 <script>
     $("#datepicker").datepicker({
         format: "mm/yyyy",
@@ -75,6 +65,33 @@
         startDate: new Date('2013-01-20'),
         endDate: new Date('2021-08-1')
     });
+
+    function validar(){
+        if($('#cpf-bolsa')!=''){
+            if($('#datepicker').val()!=''){
+                return true
+            }else{
+                alert('Informe uma data.')
+            }
+        }else{
+            alert('Informe o seu CPF.')
+        }
+    }
+
+    function submit(){
+        if(validar()){
+            cpfNis = $('#cpf-nis-bolsa').val()
+            data = $('#datepicker').val()
+            data = data.split('/')
+            data = data[1].toString()+data[0].toString()
+            bolsaCpfNisAjax(data,data, cpfNis)
+        }
+    }
+
+    $('#btn-consultar').click(()=>{
+        submit()
+    })
+
 </script>
 
 </html>
