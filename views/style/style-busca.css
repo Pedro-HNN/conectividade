@@ -16,9 +16,17 @@
   .custom-col {
     margin-bottom: 20px;
   }
-  
-  
+
   
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
       opacity: 1; /* Firefox */
+  }
+
+  .aux-result-card{
+    margin: 10px;
+    border: 2px solid aqua;
+  }
+
+  #auxilio-info{
+    
   }

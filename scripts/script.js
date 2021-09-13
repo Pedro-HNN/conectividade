@@ -119,11 +119,60 @@ function bolsaCpfNisAjax(anoMesCompetencia, anoMesReferencia, codigo, pagina = 1
             if (response[0] != null) {
 
                 var valorBolsa = response[0].valor;//valor total do Bolsa Família
-                var numeroBeneficiarios = response[0].quantidadeDependentes;//quantidade de beneficiarios Bolsa Família
+                var quantidadeDependentes = response[0].quantidadeDependentes;//quantidade de beneficiarios Bolsa Família
                 var nomeTitular = response[0].titularBolsaFamilia.nome;
+				var cpf = response[0].titularBolsaFamilia.cpfFormatado
+				var nis = response[0].titularBolsaFamilia.nis
+				var data = response[0].dataMesCompetencia.split('-')
+				data = data[2]+"/"+data[1]+"/"+data[0]
 
-                $('#bolsa-info').html('<li>'+''+valorBolsa+''+numeroBeneficiarios+''+nomeTitular+'</li>')
+				$('#bolsa-info').html('')
+                $('#bolsa-info').html(`<h2>${nomeTitular}</h2></br><ul style="text-align:left;"><li>CPF: ${cpf}</li><li>NIS: ${nis}</li><li>Data: ${data}</li><li>valor: ${valorBolsa}</li><li>Quantidade dependentes: ${quantidadeDependentes}</li>`)
             }
+        },
+        error: function (xhr) {
+            alert('Erro, contate o adm');
+        }
+    });
+}
+
+function auxilioNisAjax(codigoBenifeciario, codigoResponsavelFamiliar, pagina = 1){
+	$.ajax({
+        url: "/hackathon/public/api/consulta/auxilio/nis",
+        type: "get", 
+        data: {
+            codigoBenifeciario: codigoBenifeciario,
+            codigoResponsavelFamiliar: codigoResponsavelFamiliar,
+            pagina: pagina
+        },
+        success: function (response) {
+            arrayResponse = JSON.parse(response)
+
+			var html = ''
+
+			arrayResponse.forEach(element => {
+				html+='<div class="aux-result-card">'
+				html+='<h3>Responsavel</h3>'
+				html+=`<div class="aux-nome-resp">${element.responsavelAuxilioEmergencial.nome}</div>`
+				html+=`<div class="aux-cpf-resp">${element.responsavelAuxilioEmergencial.cpfFormatado}</div>` 
+				html+=`<div class="aux-nis-resp">${element.responsavelAuxilioEmergencial.nis}</div>`
+				html+='</br>'
+				html+='<h3>Beneficiario</h3>'
+				html+=`<div class="aux-nome-ben">${element.beneficiario.nome}</div>`
+				html+=`<div class="aux-cpf-ben">${element.beneficiario.cpfFormatado}</div>` 
+				html+=`<div class="aux-nis-ben">${element.beneficiario.nis}</div>`
+				html+='</br>'
+				html+=`<ul>`
+				html+=`<li>Mes Disponibilização: ${element.mesDisponibilizacao}</li>`
+				html+=`<li>Situacão Aux. Emer.: ${(element.situacaoAuxilioEmergencial != '' ? element.situacaoAuxilioEmergencial : "-------------")}</li>`
+				html+=`<li>Enquadramento: ${element.enquadramentoAuxilioEmergencial}</li>`
+				html+=`<li>valor: $${element.valor}</li>`
+				html+=`<li>Nº Parcela: ${element.numeroParcela}`
+				html+=`</ul>`
+				html+='</div>'
+			});
+
+            $('#auxilio-info').html(html)
         },
         error: function (xhr) {
             alert('Erro, contate o adm');
