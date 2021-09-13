@@ -24,3 +24,27 @@ body {
     opacity: 1; /* Firefox */
 }
 
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 27%;
+  border: 0px solid #f3f3f3;
+  border-radius: 58%;
+  border-top: 6px solid #3498db;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

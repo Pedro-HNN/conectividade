@@ -437,6 +437,7 @@
             </g>
           </svg>
         </div>
+        <div class="divLoader" style="display: none;"><div class="loader" style=""></div></div>
       </div>
 
       <div id="seleciona-data" class="col-md-3 custom-col" align="center">

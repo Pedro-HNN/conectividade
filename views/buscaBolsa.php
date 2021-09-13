@@ -53,7 +53,7 @@
         </div>
     </div>
         
-
+    <div class="divLoader" style="display: none;"><div class="loader" style=""></div></div>
     <?php include_once 'footer.html' ?>
 
 </body>
