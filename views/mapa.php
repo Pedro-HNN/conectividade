@@ -35,9 +35,9 @@
 
       <div div class="col-xl-3 col-lg-5">
         <div id="mapa">
-          <svg id="map" x="0px" y="0px" align="center" width="450px" height="460px">
+          <svg id="map" x="0px" y="0px" align="center" width="450px" height="460px" xmlns="http://www.w3.org/2000/svg" version="1.1">
             <g>
-              <a href="#" id="state_to" class="state" data-state="Tocantins" cod-state="TO" xlink:href="">
+              <a href="#seleciona-data" id="state_to" class="state" data-state="Tocantins" cod-state="TO" xlink:href="">
                 <title>Tocantins</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M289.558,235.641
@@ -46,7 +46,7 @@
                     S234.852,233.695,289.558,235.641z"></path>
                 <text transform="matrix(1 0 0 1 287.0137 188.3208)" fill="#FFFFFF">TO</text>
               </a>
-              <a href="#" id="state_ba" class="state" cod-state="BA" data-state="Bahia" xlink:href="">
+              <a href="#seleciona-data" id="state_ba" class="state" cod-state="BA" data-state="Bahia" xlink:href="">
                 <title>Bahia</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M313.276,197.775
@@ -60,7 +60,7 @@
                     c-0.546-1.725-5.396-6.079-0.026-7.175c-3.175,0.959-1.944-4.027,0.875-3.012C316.726,200.733,314.044,200.527,313.276,197.775z"></path>
                 <text transform="matrix(1 0 0 1 359.7324 210.1221)" fill="#FFFFFF">BA</text>
               </a>
-              <a href="#" id="state_se" class="state" cod-state="SE" data-state="Sergipe" xlink:href="">
+              <a href="#seleciona-data" id="state_se" class="state" cod-state="SE" data-state="Sergipe" xlink:href="">
                 <title>Sergipe</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M408.561,191.735
@@ -71,7 +71,7 @@
                 c-6.238,0-11.258-5.053-11.258-11.261C406.063,187.89,411.084,182.854,417.324,182.854z"></path>
                 <text transform="matrix(1 0 0 1 408.9121 198.6689)" fill="#FFFFFF">SE</text>
               </a>
-              <a href="#" id="state_pe" class="state" cod-state="PE" data-state="Pernambuco" xlink:href="">
+              <a href="#seleciona-data" id="state_pe" class="state" cod-state="PE" data-state="Pernambuco" xlink:href="">
                 <title>Pernambuco</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M373.011,167.238
@@ -84,7 +84,7 @@
                     c0.219,0.108-8.244,6.681-7.506,3.314C383.556,170.4,374.241,168.566,373.011,167.238z"></path>
                 <text transform="matrix(1 0 0 1 401.3984 165.8003)" fill="#FFFFFF">PE</text>
               </a>
-              <a href="#" id="state_al" class="state" cod-state="AL" data-state="Alagoas" xlink:href="">
+              <a href="#seleciona-data" id="state_al" class="state" cod-state="AL" data-state="Alagoas" xlink:href="">
                 <title>Alagoas</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M413.953,169.018
@@ -96,7 +96,7 @@
                     c-6.241,0-11.263-5.052-11.263-11.259C425.16,173.816,430.182,168.763,436.423,168.763z"></path>
                 <text transform="matrix(1 0 0 1 429.7891 183.895)" fill="#FFFFFF">AL</text>
               </a>
-              <a href="#" id="state_rn" class="state" cod-state="RN" data-state="Rio Grande do Norte" xlink:href="">
+              <a href="#seleciona-data" id="state_rn" class="state" cod-state="RN" data-state="Rio Grande do Norte" xlink:href="">
                 <title>Rio Grande do Norte</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M404.698,138.795
@@ -108,7 +108,7 @@
                     c-6.209,0-11.26-5.037-11.26-11.261C419.567,112.837,424.618,107.798,430.827,107.798z"></path>
                 <text transform="matrix(1 0 0 1 422.541 123.9009)" fill="#FFFFFF">RN</text>
               </a>
-              <a href="#" id="state_ce" class="state" cod-state="CE" data-state="Ceará" xlink:href="">
+              <a href="#seleciona-data" id="state_ce" class="state" cod-state="CE" data-state="Ceará" xlink:href="">
                 <title>Ceará</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M372.379,104.409
@@ -121,7 +121,7 @@
                     C373.035,102.314,374.815,105.971,372.379,104.409z"></path>
                 <text transform="matrix(1 0 0 1 386.8379 129.0347)" fill="#FFFFFF">CE</text>
               </a>
-              <a href="#" id="state_pi" class="state" cod-state="PI" data-state="Piauí" xlink:href="">
+              <a href="#seleciona-data" id="state_pi" class="state" cod-state="PI" data-state="Piauí" xlink:href="">
                 <title>Piauí</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M320.781,185.478
@@ -134,7 +134,7 @@
                     C328.176,198.748,327.409,180.727,320.781,185.478z"></path>
                 <text transform="matrix(1 0 0 1 355.127 158.1045)" fill="#FFFFFF">PI</text>
               </a>
-              <a href="#" id="state_ma" class="state" cod-state="MA" data-state="Maranhão" xlink:href="">
+              <a href="#seleciona-data" id="state_ma" class="state" cod-state="MA" data-state="Maranhão" xlink:href="">
                 <title>Maranhão</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M288.845,127.827
@@ -152,7 +152,7 @@
                     C290.983,125.675,290.983,128.044,288.845,127.827z"></path>
                 <text transform="matrix(1 0 0 1 318.2754 126.7036)" fill="#FFFFFF">MA</text>
               </a>
-              <a href="#" id="state_ap" class="state" cod-state="AP" data-state="Amapá" xlink:href="">
+              <a href="#seleciona-data" id="state_ap" class="state" cod-state="AP" data-state="Amapá" xlink:href="">
                 <title>Amapá</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M225.198,39.089
@@ -164,7 +164,7 @@
                 <text transform="matrix(1 0 0 1 245.9023 52.6099)" fill="#FFFFFF">AP</text>
               </a>
 
-              <a href="#" id="state_pa" class="state" cod-state="PA" data-state="Pará" xlink:href="">
+              <a href="#seleciona-data" id="state_pa" class="state" cod-state="PA" data-state="Pará" xlink:href="">
                 <title>Pará</title>
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M173.378,50.619
 
@@ -183,7 +183,7 @@
                     C319.302,76.912,319.74,78.76,319.139,77.664z"></path>
                 <text transform="matrix(1 0 0 1 232.7725 122.5137)" fill="#FFFFFF">PA</text>
               </a>
-              <a href="#" id="state_rr" class="state" cod-state="RR" data-state="Roraima" xlink:href="">
+              <a href="#seleciona-data" id="state_rr" class="state" cod-state="RR" data-state="Roraima" xlink:href="">
                 <title>Roraima</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M113.18,24.107
@@ -197,7 +197,7 @@
                     s-12.517-52.736-20.335-54.063C115.261,36.417,111.523,25.682,113.18,24.107z"></path>
                 <text transform="matrix(1 0 0 1 136.2939 42.3862)" fill="#FFFFFF">RR</text>
               </a>
-              <a href="#" id="state_am" class="state" cod-state="AM" data-state="Amazonas" xlink:href="">
+              <a href="#seleciona-data" id="state_am" class="state" cod-state="AM" data-state="Amazonas" xlink:href="">
                 <title>Amazonas</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M10.078,136.412
@@ -220,7 +220,7 @@
                     c-8.601-4.381-16.61-8.981-26.088-11.05c-10.282-2.259-20.635-4.793-29.878-10.011C4.121,145.766,12.433,144.779,10.078,136.412z"></path>
                 <text transform="matrix(1 0 0 1 98.1406 119.0591)" fill="#FFFFFF">AM</text>
               </a>
-              <a href="#" id="state_ac" class="state" cod-state="AC" data-state="Acre" xlink:href="">
+              <a href="#seleciona-data" id="state_ac" class="state" cod-state="AC" data-state="Acre" xlink:href="">
                 <title>Acre</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M3.656,148.545
@@ -232,7 +232,7 @@
                     c6.299-3.41-3.107-11.9-5.216-15.679c-0.52-0.918-3.588-4.655-3.629-5.957C1.642,150.174,6.612,151.968,3.656,148.545z"></path>
                 <text transform="matrix(1 0 0 1 47.7017 184.9355)" fill="#FFFFFF">AC</text>
               </a>
-              <a href="#" id="state_ro" class="state" cod-state="RO" data-state="Rondônia" xlink:href="">
+              <a href="#seleciona-data" id="state_ro" class="state" cod-state="RO" data-state="Rondônia" xlink:href="">
                 <title>Rondônia</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M83.34,180.232
@@ -247,7 +247,7 @@
                     c-0.384-6.081-1.028-1.986-3.382-1.903C94.336,180.686,85.957,181.671,83.34,180.232z"></path>
                 <text transform="matrix(1 0 0 1 118.1299 195.3193)" fill="#FFFFFF">RO</text>
               </a>
-              <a href="#" id="state_mt" class="state" cod-state="MT" data-state="Mato Grosso" xlink:href="">
+              <a href="#seleciona-data" id="state_mt" class="state" cod-state="MT" data-state="Mato Grosso" xlink:href="">
                 <title>Mato Grosso</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M142.237,173.962
@@ -265,7 +265,7 @@
                     C143.581,176.618,141.937,174.714,142.237,173.962z"></path>
                 <text transform="matrix(1 0 0 1 200.0244 218.4175)" fill="#FFFFFF">MT</text>
               </a>
-              <a href="#" id="state_ms" class="state" cod-state="MS" data-state="Mato Grosso do Sul" xlink:href="">
+              <a href="#seleciona-data" id="state_ms" class="state" cod-state="MS" data-state="Mato Grosso do Sul" xlink:href="">
                 <title>Mato Grosso do Sul</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M183.198,294.536
@@ -280,7 +280,7 @@
                     c0.932-2.847,1.411-9.912,0.453-11.856c-0.165-0.331-3.52-7.232-2.547-8.108C186.306,297.688,182.334,299.415,183.198,294.536z"></path>
                 <text transform="matrix(1 0 0 1 213.2939 306.7236)" fill="#FFFFFF">MS</text>
               </a>
-              <a href="#" id="state_go" class="state" cod-state="GO" data-state="Goiás" xlink:href="">
+              <a href="#seleciona-data" id="state_go" class="state" cod-state="GO" data-state="Goiás" xlink:href="">
                 <title>Goiás</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M237.768,270.519
@@ -299,7 +299,7 @@
                     c-3.724-0.604,1.04-3.231,0.22-4.109c-1.89-1.916-4.382,1.756-3.588-3.012C239.602,274.627,237.055,273.038,237.768,270.519z"></path>
                 <text transform="matrix(1 0 0 1 266.9111 254.2139)" fill="#FFFFFF">GO</text>
               </a>
-              <a href="#" id="state_pr" class="state" cod-state="PR" data-state="Paraná" xlink:href="">
+              <a href="#seleciona-data" id="state_pr" class="state" cod-state="PR" data-state="Paraná" xlink:href="">
                 <title>Paraná</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M222.225,363.694
@@ -310,7 +310,7 @@
                     c-3.875-1.449-2.698-6.491-6.054-8.216C226.663,364.623,222.498,367.8,222.225,363.694z"></path>
                 <text transform="matrix(1 0 0 1 248.4453 356.1045)" fill="#FFFFFF">PR</text>
               </a>
-              <a href="#" id="state_sc" class="state" cod-state="SC" data-state="Santa Catarina" xlink:href="">
+              <a href="#seleciona-data" id="state_sc" class="state" cod-state="SC" data-state="Santa Catarina" xlink:href="">
                 <title>Santa Catarina</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M231.029,383.959
@@ -321,7 +321,7 @@
                     C276.085,411.866,233.534,382.918,231.029,383.959z"></path>
                 <text transform="matrix(1 0 0 1 266.9111 387.7646)" fill="#FFFFFF">SC</text>
               </a>
-              <a href="#" id="state_rs" class="state" cod-state="RS" data-state="Rio Grande do Sul" xlink:href="">
+              <a href="#seleciona-data" id="state_rs" class="state" cod-state="RS" data-state="Rio Grande do Sul" xlink:href="">
                 <title>Rio Grande do Sul</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M191.236,416.881
@@ -334,7 +334,7 @@
                     c-2.3-1.999-4.793-5.479-7.737-6.68c-3.478-1.367-5.615,5.145-9.052,0.821C189.168,418.854,190.332,418.032,191.236,416.881z"></path>
                 <text transform="matrix(1 0 0 1 231.0313 414.4658)" fill="#FFFFFF">RS</text>
               </a>
-              <a href="#" id="state_sp" class="state" cod-state="SP" data-state="São Paulo" xlink:href="">
+              <a href="#seleciona-data" id="state_sp" class="state" cod-state="SP" data-state="São Paulo" xlink:href="">
                 <title>São Paulo</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M239.3,330.554
@@ -349,7 +349,7 @@
                     C247.982,330.386,239.876,331.21,239.3,330.554z"></path>
                 <text transform="matrix(1 0 0 1 280.6816 327.3193)" fill="#FFFFFF">SP</text>
               </a>
-              <a href="#" id="state_mg" class="state" cod-state="MG" data-state="Minas Gerais" xlink:href="">
+              <a href="#seleciona-data" id="state_mg" class="state" cod-state="MG" data-state="Minas Gerais" xlink:href="">
                 <title>Minas Gerais</title>
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M262.881,297.305
 
@@ -370,7 +370,7 @@
                     c-4.708-0.353-5.53-1.613-9.858,0.631C262.993,300.562,262.336,299.274,262.881,297.305z"></path>
                 <text transform="matrix(1 0 0 1 328.4063 286.4561)" fill="#FFFFFF">MG</text>
               </a>
-              <a href="#" id="state_rj" class="state" cod-state="RJ" data-state="Rio de Janeiro" xlink:href="">
+              <a href="#seleciona-data" id="state_rj" class="state" cod-state="RJ" data-state="Rio de Janeiro" xlink:href="">
                 <title>Rio de Janeiro</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M332.886,337.429
@@ -388,7 +388,7 @@
                     c-6.211,0-11.263-5.054-11.263-11.264C343.831,323.634,348.883,318.613,355.094,318.613z"></path>
                 <text transform="matrix(1 0 0 1 347.4648 334.6807)" fill="#FFFFFF">RJ</text>
               </a>
-              <a href="#" id="state_es" class="state" cod-state="ES" data-state="Espírito Santo" xlink:href="">
+              <a href="#seleciona-data" id="state_es" class="state" cod-state="ES" data-state="Espírito Santo" xlink:href="">
                 <title>Espírito Santo</title>
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M367.119,308.834
 
@@ -403,7 +403,7 @@
                     c-6.212,0-11.263-5.049-11.263-11.261C370.654,289.777,375.705,284.723,381.917,284.723z"></path>
                 <text transform="matrix(1 0 0 1 373.3047 300.4971)" fill="#FFFFFF">ES</text>
               </a>
-              <a href="#" id="state_df" class="state" cod-state="DF" data-state="Distrito Federal" xlink:href="">
+              <a href="#seleciona-data" id="state_df" class="state" cod-state="DF" data-state="Distrito Federal" xlink:href="">
                 <title>Distrito Federal</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M292.461,246.197
@@ -414,7 +414,7 @@
                     c-6.209,0-11.261-5.053-11.261-11.263C289.475,243.377,294.523,238.34,300.735,238.34z"></path>
                 <text transform="matrix(1 0 0 1 292.4141 254.2139)" fill="#FFFFFF">DF</text>
               </a>
-              <a href="#" id="state_pb" class="state" cod-state="PB" data-state="Paraíba">
+              <a href="#seleciona-data" id="state_pb" class="state" cod-state="PB" data-state="Paraíba">
                 <title>Paraíba</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M401.575,141.096

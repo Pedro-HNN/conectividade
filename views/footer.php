@@ -14,9 +14,9 @@
   </style>
 
   <footer class="bg-light text-center text-lg-start  footer-custom">
-    <div class="container p-4">
-      <div class="row">
-        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+    <div class="container p-2">
+      <div class="row justify-content-around">
+        <div class="col-lg-5 col-md-10 mb-4 mb-md-0">
           <h5 class="text-uppercase">O QUE É O BOLSA FAMÍLIA?</h5>
 
           <p>
@@ -28,7 +28,7 @@
           </p>
         </div>
 
-        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <div class="col-lg-5 col-md-10 mb-4 mb-md-0">
           <h5 class="text-uppercase">O QUE E O AUXÍLIO EMERGENCIAL?</h5>
 
           <p>O auxílio emergencial é um benefício instituído no Brasil,que previu o repasse de 600 reais mensais a
@@ -47,7 +47,7 @@
         <a target="_blank" href="https://github.com/Pedro-HNN">Pedro H</a>,
         <a target="_blank" href="https://github.com/lucasriber01">Jehan L</a>,
         <a target="_blank" href="https://github.com/matheusleal55">Matheus L</a> 
-        para a Hackathon 2021
+        | Aplicação desenvolvida para o Hackathon SEERPRO 2021
       </a>
     </div>
   </footer>
