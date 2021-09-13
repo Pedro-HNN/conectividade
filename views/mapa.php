@@ -31,7 +31,7 @@
           <div class="card-body text-dark ">
             <h5 class="card-title">Conheça nossa platafora +Conectividade</h5>
             <hr />
-            <p class="card-text">Selecione um Estado e Municipio para ver a quantidade de beneficiados pelo Bolsa Família e Auxilio Emergencial!<br>Escolha o mês e selecione seu estado!<br><br>Entre em <a href="./consulta">Veja sua Situação</a> para ver sua situação referente ao Bolsa Família e Auxilio Emergencial com simplicidade e praticidade!</p>
+            <p class="card-text">Selecione um Estado e Municipio para ver a quantidade de beneficiados pelo Bolsa Família e Auxilio Emergencial!<br>Escolha o mês e selecione seu estado!<br><br>Veja sua situação referente ao <a href="">Bolsa Família</a> ou ao <a href="">Auxilio Emergencial</a> com simplicidade e praticidade!</p>
 
           </div>
         </div>

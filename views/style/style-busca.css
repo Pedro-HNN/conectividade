@@ -9,7 +9,7 @@ html, body {
 }
 .container{
 	margin-top: 20px;
-	min-height: 80%;
+	min-height: 56%;
 }
   
 .custom-col {
@@ -26,4 +26,8 @@ html, body {
 
 #resultado-auxilio {
 	display: none;
+}
+
+h5 {
+	font-size: large;
 }

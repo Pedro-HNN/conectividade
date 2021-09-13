@@ -24,6 +24,7 @@
 
     <div class="container">
         <div class="row">
+
             <div class="col-md-6">
                 <div id="pesquisa-bolsa" align="center">
                     <div class="card custom-card shadow p-2 mb-5 bg-white rounded h-100" style="margin-top:20px;max-width: 25rem; border-color: #0094d9;">
@@ -45,18 +46,20 @@
                         <div id="bolsa-info">
                          
                         </div>
+
                     </div>
-            	</div>
+                </div>
+    		</div>
         </div>
-	</div>
+    </div>
         
-            
-	</div>
 
     <?php include_once 'footer.html' ?>
 
 </body>
+
 <script src="../../scripts/script.js"></script>
+
 <script>
     $("#datepicker").datepicker({
         format: "mm/yyyy",
