@@ -24,7 +24,7 @@
 
 <body>
 
-    <?php include_once 'header.html' ?>
+    <?php include_once 'header.php' ?>
 
 
     <div class="container">
@@ -57,7 +57,7 @@
         </div>
     </div>
     <div class="divLoader" style="display: none;"><div class="loader" style=""></div></div>
-    <?php include_once 'footer.html' ?>
+    <?php include_once 'footer.php' ?>
 
 </body>
 

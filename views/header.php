@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br" >
-<head>
-<meta charset="UTF-8">
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
 <style>
@@ -27,8 +24,8 @@
 	<div class="collapse navbar-collapse" id="toggleMobileMenu">
 		<ul class="navbar-nav ms-auto text-center">
 
-			<li><a class="nav-link " href="../public/">Mapa</a></li>
-			<li><a class="nav-link" href="./public/consulta/auxilio">Auxilio Emergencial</a></li>
+			<li><a class="nav-link " href="">Mapa</a></li>
+			<li><a class="nav-link" href="consulta\auxilio">Auxilio Emergencial</a></li>
 			<li><a class="nav-link" href="./public/consulta/bolsa">Bolsa Família</a></li>
 		</ul>
 	</div>

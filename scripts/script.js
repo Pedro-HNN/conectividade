@@ -104,7 +104,7 @@ function auxilioMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1) {
 }
 
 function bolsaCpfNisAjax(anoMesCompetencia, anoMesReferencia, codigo, pagina = 1) {
-	console.log(anoMesCompetencia, anoMesReferencia, codigo, pagina)
+	showLoader()
     $.ajax({
         url: "/hackathon/public/api/consulta/bolsa/cpf-nis",
         type: "get",
@@ -115,7 +115,7 @@ function bolsaCpfNisAjax(anoMesCompetencia, anoMesReferencia, codigo, pagina = 1
             pagina: pagina
         },
         success: function (response) {
-			console.log(response)
+			
 			response = JSON.parse(response)
             if (response[0] != null) {
 
@@ -131,15 +131,19 @@ function bolsaCpfNisAjax(anoMesCompetencia, anoMesReferencia, codigo, pagina = 1
 
 				$('#bolsa-info').html('')
                 $('#bolsa-info').html(`<h2>${nomeTitular}</h2></br><ul style="text-align:left;"><li>CPF: ${cpf}</li><li>NIS: ${nis}</li><li>Data: ${data}</li><li>valor: ${valorBolsa}</li><li>Quantidade dependentes: ${quantidadeDependentes}</li>`)
-            }
+			
+				hideLoader()	
+			}
         },
         error: function (xhr) {
+			hideLoader()
             alert('Erro, contate o adm');
         }
     })
 }
 
 function auxilioNisAjax(codigoBenifeciario, codigoResponsavelFamiliar, pagina = 1){
+	showLoader()
 	$.ajax({
         url: "/hackathon/public/api/consulta/auxilio/nis",
         type: "get", 
@@ -176,8 +180,10 @@ function auxilioNisAjax(codigoBenifeciario, codigoResponsavelFamiliar, pagina = 
 			});
 			$('#resultado-auxilio').show()
             $('#auxilio-info').html(html)
+			hideLoader()
         },
         error: function (xhr) {
+			hideLoader()
             alert('Erro, contate o adm');
         }
     });
@@ -198,4 +204,26 @@ function atualizarData() {
 function atualizarMapa(siglaEstado) {
 	$('.mapActive').removeClass('mapActive')
 	$(`[cod-state="${siglaEstado}"]`).find('path').addClass('mapActive')
+}
+
+function habilitarMapa(){
+	$('.divLoader').hide()
+	$('map a').removeAttr('disable')
+	$('.state .label_icon_state').css({'fill': '#66ccff'});
+	$('.state .shape').css({'fill': '#0094d9'});
+}
+
+function desabilitarMapa(){
+	$('.divLoader').show()
+	$('map a').attr('disable', true)
+	$('.state .label_icon_state').css({'fill': '#666'});
+	$('.state .shape').css({'fill': '#ddd'});
+}
+
+function hideLoader(){
+	$('.divLoader').hide()
+}
+
+function showLoader(){
+	$('.divLoader').show()
 }

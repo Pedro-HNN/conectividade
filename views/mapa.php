@@ -20,7 +20,7 @@
 
 <body class="overflow-auto ">
 
-  <?php include_once 'header.html' ?>
+  <?php include_once 'header.php' ?>
 
 
   <div class="container-body">
@@ -481,7 +481,7 @@
     </div>
   </div>
 
-  <?php include_once 'footer.html' ?>
+  <?php include_once 'footer.php' ?>
 
 </body>
 
@@ -514,6 +514,7 @@
   });
 
   $('#selEstados').change(event => {
+    desabilitarMapa()
     estadoSigla = $(event.currentTarget).val()
 
     atualizarData()
@@ -525,6 +526,7 @@
   $("#datepicker").change(event => {})
 
   $("#selMunicipio").change(event => {
+    desabilitarMapa()
     atualizarData()
     if (vericacao()) {
       estado = $('#selEstados').val()
@@ -536,6 +538,7 @@
   })
 
   $('#btn-consultar').click(function() {
+    desabilitarMapa()
     var estado = $('#select-estados option:selected').text(); //pega nome do estado
     var codigoIbge = $('#select-estados').val(); //pega código IBGE para as consultas API
     var anoMes = $('#datepicker').val(); //pega mês e ano
@@ -544,6 +547,7 @@
   });
 
   $('#map .state').click(event => {
+    desabilitarMapa()
     var estadoSigla = $(event.currentTarget).attr('cod-state');
     atualizarMapa(estadoSigla)
     $('#selEstados').val(estadoSigla)
