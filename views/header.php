@@ -24,9 +24,11 @@
 	<div class="collapse navbar-collapse" id="toggleMobileMenu">
 		<ul class="navbar-nav ms-auto text-center">
 
-			<li><a class="nav-link " href="">Mapa</a></li>
-			<li><a class="nav-link" href="consulta\auxilio">Auxilio Emergencial</a></li>
-			<li><a class="nav-link" href="./public/consulta/bolsa">Bolsa Família</a></li>
+
+			<li><a class="nav-link " href="/hackathon/public/">Mapa</a></li>
+			<li><a class="nav-link" href="/hackathon/public/consulta/auxilio">Auxilio Emergencial</a></li>
+			<li><a class="nav-link" href="/hackathon/public/consulta/bolsa">Bolsa Família</a></li>
+
 		</ul>
 	</div>
 </nav>
