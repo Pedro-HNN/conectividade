@@ -1,32 +1,29 @@
 
 * {
-    margin: 0;
-    padding: 0;
-  }
+	margin: 0;
+	padding: 0;
+}
   
-  html,
-  body {
-    height: 100%;
-  }
-  .container{
-    margin-top: 20px;
-    min-height: 58%;
-  }
+html, body {
+	height: 100%;
+}
+.container{
+	margin-top: 20px;
+	min-height: 80%;
+}
   
-  .custom-col {
-    margin-bottom: 20px;
-  }
-
+.custom-col {
+	margin-bottom: 20px;
+}
   
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-      opacity: 1; /* Firefox */
-  }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	opacity: 1; /* Firefox */
+}
+ 
+#resultado-bolsa {
+	display: none !important;
+}
 
-  .aux-result-card{
-    margin: 10px;
-    border: 2px solid aqua;
-  }
-
-  #auxilio-info{
-    
-  }
+#resultado-auxilio {
+	display: none;
+}
