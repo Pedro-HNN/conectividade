@@ -22,7 +22,6 @@
 
   <?php include_once 'header.html' ?>
 
-
   <div class="container-body">
     <div class="row" style="justify-content: center;">
 
@@ -31,7 +30,7 @@
           <div class="card-body text-dark ">
             <h5 class="card-title">Conheça nossa platafora +Conectividade</h5>
             <hr />
-            <p class="card-text">Selecione um Estado e Municipio para ver a quantidade de beneficiados pelo Bolsa Família e Auxilio Emergencial!<br>Escolha o mês e selecione seu estado!<br><br>Veja sua situação referente ao <a href="">Bolsa Família</a> ou ao <a href="">Auxilio Emergencial</a> com simplicidade e praticidade!</p>
+            <p class="card-text">Selecione um Estado e Municipio para ver a quantidade de beneficiados pelo Bolsa Família e Auxilio Emergencial!<br>Escolha o mês e selecione seu estado!<br><br>Veja sua situação referente ao <a href="/hackathon/public/consulta/bolsa">Bolsa Família</a> ou ao <a href="/hackathon/public/consulta/auxilio">Auxilio Emergencial</a> com simplicidade e praticidade!</p>
 
           </div>
         </div>
@@ -437,7 +436,6 @@
             </g>
           </svg>
         </div>
-        <div class="divLoader" style="display: none;"><div class="loader" style=""></div></div>
       </div>
 
       <div id="seleciona-data" class="col-md-3 custom-col" align="center">
