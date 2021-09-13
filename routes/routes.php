@@ -66,12 +66,12 @@ $router->get('/api/consulta/auxilio/benifeciario-municipio', function(){
     die;
 });
 
-$router->get('/api/consulta/auxilio/nis', function(){
+$router->get('/api/consulta/auxilio/cpf-nis', function(){
     $codigoBenifeciario = $_REQUEST['codigoBenifeciario'];
     $codigoResponsavelFamiliar = $_REQUEST['codigoResponsavelFamiliar'];
     $pagina = $_REQUEST['pagina'];
     $apiController = new ApiController();
-    $result = $apiController->consultarAuxilioNis($codigoBenifeciario, $codigoResponsavelFamiliar, $pagina);
+    $result = $apiController->consultarAuxilioCpfNis($codigoBenifeciario, $codigoResponsavelFamiliar, $pagina);
     echo json_encode($result);
     die;
 });

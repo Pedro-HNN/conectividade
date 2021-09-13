@@ -3,12 +3,10 @@
 	margin: 0;
 	padding: 0;
 }
-
-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    opacity: 1; /* Firefox */
+input::placeholder { 
+	opacity: 1;
 	color:white;
-}
-  
+  }
 html, body {
 	height: 100%;
 }
@@ -16,19 +14,12 @@ html, body {
 	margin-top: 20px;
 	min-height: 56%;
 }
-  
 .custom-col {
 	margin-bottom: 20px;
 }
-  
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-	opacity: 1; /* Firefox */
-}
- 
 #resultado-bolsa {
 	display: none;
 }
-
 #resultado-auxilio {
 	display: none;
 }
@@ -36,11 +27,24 @@ html, body {
 	max-height: 50vh;
     overflow: auto;
 }
-
+#btn-consultar{
+	background-color: #0094d9;
+	border-color:#0094d9;
+	margin-top:5px;
+	color:#ffffff;
+	margin-top: 60px;
+}
+.buscaInput{
+	width: 80%;
+	background-color: #0094d9;
+	border-color: #0094d9; 
+	color:#ffffff;
+	border: none;
+	margin: 10px;
+}
 h5 {
 	font-size: large;
 }
-
 .aux-result-card{
 	text-align: left;
     border-style: ridge;
@@ -68,7 +72,7 @@ h5 {
     animation: spin 1s linear infinite;  
   }
   
-  @-webkit-keyframes spin {
+@-webkit-keyframes spin {
 	0% {
 	  -webkit-transform: rotate(0deg);
 	  transform: rotate(0deg);
@@ -78,3 +82,5 @@ h5 {
 	  transform: rotate(360deg);
 	}
   }
+
+  

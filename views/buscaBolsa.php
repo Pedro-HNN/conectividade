@@ -9,15 +9,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../views/style/style-busca.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>+Conectividade</title>
-    <style>
-
-    </style>
-
 </head>
+
 <body>
 
     <?php include_once 'header.php' ?>
@@ -32,28 +27,30 @@
                             <h5 class="card-title">Pesquise aqui sua situação do Bolsa Família!</h5>
                             <hr />
                             <div class="form-group">
-                                <input type="text" class="btn btn-lg" id="cpf-nis-bolsa" placeholder="Digite seu CPF ou NIS!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;" />
-                                <input type="text" class="btn btn-lg " name="datepicker" id="datepicker" placeholder="Mês Competência" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;margin-top:5px;" />
-                                <button id="btn-consultar" class="btn btn-lg shadow p-4 lg-5 rounded" value="submit" style="background-color: #0094d9;border-color:#0094d9;margin-top:5px;color:#ffffff;">Consultar</button>
+                                <input type="text" class="buscaInput btn-lg" id="cpf-nis-bolsa" placeholder="Digite seu CPF ou NIS!"/>
+                                <input type="text" class="buscaInput btn-lg " name="datepicker" id="datepicker" placeholder="Mês Competência" />
+                                <button id="btn-consultar" class="btn btn-lg" value="submit">Consultar</button>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-            	<div id="resultado-bolsa" align="center">
-                	<div class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
+                <div id="resultado-bolsa" align="center">
+                    <div class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
                         <div id="bolsa-info">
-                         
-                        </div>
 
+                        </div>
                     </div>
                 </div>
-    		</div>
+            </div>
         </div>
     </div>
-        
-    <div class="divLoader" style="display: none;"><div class="loader" style=""></div></div>
+
+    <div class="divLoader" style="display: none;">
+        <div class="loader"></div>
+    </div>
+
     <?php include_once 'footer.php' ?>
 
 </body>
@@ -69,32 +66,36 @@
         endDate: new Date('2021-08-1')
     });
 
-    function validar(){
-        if($('#cpf-bolsa')!=''){
-            if($('#datepicker').val()!=''){
+    $("#datepicker").change(event => {
+        $('.datepicker').hide()
+    })
+
+
+    function validar() {
+        if ($('#cpf-bolsa') != '') {
+            if ($('#datepicker').val() != '') {
                 return true
-            }else{
+            } else {
                 alert('Informe uma data.')
             }
-        }else{
+        } else {
             alert('Informe o seu CPF.')
         }
     }
 
-    function submit(){
-        if(validar()){
+    function submit() {
+        if (validar()) {
             cpfNis = $('#cpf-nis-bolsa').val()
             data = $('#datepicker').val()
             data = data.split('/')
-            data = data[1].toString()+data[0].toString()
-            bolsaCpfNisAjax(data,data, cpfNis)
+            data = data[1].toString() + data[0].toString()
+            bolsaCpfNisAjax(data, data, cpfNis)
         }
     }
 
-    $('#btn-consultar').click(()=>{
+    $('#btn-consultar').click(() => {
         submit()
     })
-
 </script>
 
 </html>

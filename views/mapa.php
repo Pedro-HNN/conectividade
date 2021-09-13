@@ -12,8 +12,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-
-
   <link rel="stylesheet" href="../views/style/style-mapa.css">
   <title>+Conectividade</title>
 </head>
@@ -25,19 +23,18 @@
   <div class="container-body">
     <div class="row justify-content-around">
 
-      <div id="informacoes" class="col-md-3 custom-col " align="center">
+      <div id="informacoes" class="col-xl-3 col-lg-5" align="center">
         <div class="card custom-card shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem; border-color: #0094d9;">
           <div class="card-body text-dark ">
             <h5 class="card-title">Conheça nossa platafora +Conectividade</h5>
             <hr />
             <p class="card-text">Selecione um Estado e Municipio para ver a quantidade de beneficiados pelo Bolsa Família e Auxilio Emergencial!<br>Escolha o mês e selecione seu estado!<br><br>Veja sua situação referente ao <a href="/hackathon/public/consulta/bolsa">Bolsa Família</a> ou ao <a href="/hackathon/public/consulta/auxilio">Auxilio Emergencial</a> com simplicidade e praticidade!</p>
-
           </div>
         </div>
       </div>
 
-      <div div class="col-md-3 custom-col">
-        <div id="mapa" text-align="center">
+      <div div class="col-xl-3 col-lg-5">
+        <div id="mapa">
           <svg id="map" x="0px" y="0px" align="center" width="450px" height="460px">
             <g>
               <a href="#" id="state_to" class="state" data-state="Tocantins" cod-state="TO" xlink:href="">
@@ -417,7 +414,7 @@
                     c-6.209,0-11.261-5.053-11.261-11.263C289.475,243.377,294.523,238.34,300.735,238.34z"></path>
                 <text transform="matrix(1 0 0 1 292.4141 254.2139)" fill="#FFFFFF">DF</text>
               </a>
-              <a href="#" id="state_pb" class="state" cod-state="PB" data-state="Paraíba" xlink:href="">
+              <a href="#" id="state_pb" class="state" cod-state="PB" data-state="Paraíba">
                 <title>Paraíba</title>
 
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M401.575,141.096
@@ -438,44 +435,38 @@
         </div>
       </div>
 
-      <div id="seleciona-data" class="col-md-3 custom-col" align="center">
+      <div id="seleciona-data" class="col-xl-3 col-lg-12 row justify-content-around" align="center">
 
-        <div class="card text-dark shadow p-3 mb-5 bg-white rounded" style="margin-top:20px;border-color:#0094d9;">
-          <div class="cardRegiao" align="center">
-            <h3>Selecione a região e a data</h3>
-            <select id="selEstados" class="btn btn-lg cardItemRegiao" placeholder="Selecione o Estado" style="background-color: #0094d9;border-color: #0094d9;color:#ffffff">
+        <!--<div class="row">-->
 
-              <option>Selecione o Estado</option>
-            </select>
+          <div class="card text-dark shadow bg-white rounded col-lg-5 col-xl-12" style="margin-top:20px;border-color:#0094d9;">
+            <div class="cardRegiao" align="center">
+              <h3>Selecione a região e a data</h3>
+              <hr>
+              <select id="selEstados" class="btn btn-lg cardItemRegiao" placeholder="Selecione o Estado" style="background-color: #0094d9;border-color: #0094d9;color:#ffffff">
+                <option>Selecione o Estado</option>
+              </select>
+            </div>
+            <div id="divMunicipio" class="cardRegiao">
+              <select class="btn btn-lg cardItemRegiao" id="selMunicipio" style="background-color: #0094d9;border-color: #0094d9;color:#ffffff">
+                <option>Selecione o Município
+              </select>
+            </div>
+            <div class="cardRegiao">
+              <input type="text" class="btn btn-lg cardItemRegiao" name="datepicker" id="datepicker" placeholder="Selecione a Data" size="3" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;" />
+            </div>
           </div>
 
-          <div id="divMunicipio" class="cardRegiao">
-
-            <select class="btn btn-lg cardItemRegiao" id="selMunicipio" style="background-color: #0094d9;border-color: #0094d9;color:#ffffff">
-
-              <option>Selecione o Município
-            </select>
+          <div id="info-state" class="card text-dark shadow col-lg-5 col-xl-12" style="margin-top:20px;border-color:#0094d9;">
+            <div id="info-state-title"></div>
+            <div id="info-state-bolsa"></div>
+            <div id="info-state-auxilio"></div>
           </div>
 
-          <div class="cardRegiao">
-
-            <input type="text" class="btn btn-lg cardItemRegiao" name="datepicker" id="datepicker" placeholder="Selecione a Data" size="3" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;" />
-          </div>
-        </div>
-
-        <div class="select-responsivo">
-
-
-        </div>
-
-
-        <div id="info-state" class="card text-dark shadow p-3 mb-5 bg-white rounded" style="margin-top:20px;border-color:#0094d9;">
-          <div id="info-state-title"></div>
-          <div id="info-state-bolsa"></div>
-          <div id="info-state-auxilio"></div>
-        </div>
+        <!--</div>-->
 
       </div>
+
     </div>
   </div>
 
@@ -501,8 +492,6 @@
     }
   }
 
-  //EVENTOS
-
   $("#datepicker").datepicker({
     format: "mm/yyyy",
     startView: "months",
@@ -511,8 +500,9 @@
     endDate: new Date('2021-08-1')
   });
 
+  //EVENTOS
+
   $('#selEstados').change(event => {
-    desabilitarMapa()
     estadoSigla = $(event.currentTarget).val()
 
     atualizarData()
@@ -521,7 +511,9 @@
 
   })
 
-  $("#datepicker").change(event => {})
+  $("#datepicker").change(event => {
+    $('.datepicker').hide()
+  })
 
   $("#selMunicipio").change(event => {
     atualizarData()
@@ -535,7 +527,6 @@
   })
 
   $('#btn-consultar').click(function() {
-    desabilitarMapa()
     var estado = $('#select-estados option:selected').text(); //pega nome do estado
     var codigoIbge = $('#select-estados').val(); //pega código IBGE para as consultas API
     var anoMes = $('#datepicker').val(); //pega mês e ano
@@ -544,7 +535,6 @@
   });
 
   $('#map .state').click(event => {
-    desabilitarMapa()
     var estadoSigla = $(event.currentTarget).attr('cod-state');
     atualizarMapa(estadoSigla)
     $('#selEstados').val(estadoSigla)
@@ -556,6 +546,17 @@
 
   window.onload = () => {
     montarSelectEstados()
+  }
+
+  window.onresize = event => {
+    width = $(event.currentTarget).width()
+    if (width > 1390) {
+      $('#map').attr('style', 'transform: scale(1)')
+    } else if (width > 1180) {
+      $('#map').attr('style', 'transform: scale(0.8)')
+    } else {
+      $('#map').attr('style', 'transform: scale(1)')
+    }
   }
 </script>
 

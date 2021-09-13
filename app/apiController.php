@@ -34,15 +34,15 @@ class ApiController {
         return $result;
     }
 
-    function consultarAuxilioNis($codigoBenifeciario, $codigoResponsavelFamiliar, $pagina){
+    function consultarAuxilioCpfNis($codigoBenifeciario, $codigoResponsavelFamiliar, $pagina){
         $apiSerpro = new SerproApi($_SESSION['apiSerpro']['url'], $_SESSION['apiSerpro']['chave']);
-        $result = $apiSerpro->consultarAuxilioNis($codigoBenifeciario, $codigoResponsavelFamiliar, $pagina);
+        $result = $apiSerpro->consultarAuxilioCpfNis($codigoBenifeciario, $codigoResponsavelFamiliar, $pagina);
         return $result;
     }
 
     function consultarAuxiliobenifeciarioMunicipio($codigoIbge, $mesAno, $pagina){
         $apiSerpro = new SerproApi($_SESSION['apiSerpro']['url'], $_SESSION['apiSerpro']['chave']);
-        $result = $apiSerpro->consultarAuxiliobenifeciarioMunicipio($codigoIbge, $mesAno, $pagina);
+        $result = $apiSerpro->consultarAuxiliobeneficiarioMunicipio($codigoIbge, $mesAno, $pagina);
         return $result;
     }
 }

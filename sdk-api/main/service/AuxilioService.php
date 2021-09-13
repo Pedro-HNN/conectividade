@@ -2,14 +2,14 @@
 
 namespace org\gov\br\sdk\service;
 
-use org\gov\br\sdk\entity\request\AuxilioBenifeciarioMunicipioRequest;
+use org\gov\br\sdk\entity\request\AuxilioBeneficiarioMunicipioRequest;
 use org\gov\br\sdk\entity\request\AuxilioNisRequest;
 use org\gov\br\sdk\entity\request\AuxilioMunicipioRequest;
 
 class AuxilioService extends Service {
-    public function consultarAuxilioBenifeciarioMunicipio(AuxilioBenifeciarioMunicipioRequest $auxilioBenifeciarioMunicipioRequest){
+    public function consultarAuxilioBeneficiarioMunicipio(AuxilioBeneficiarioMunicipioRequest $auxilioBeneficiarioMunicipioRequest){
         $this->setUrlApi("/auxilio-emergencial-beneficiario-por-municipio");
-        $this->setRequestObject($auxilioBenifeciarioMunicipioRequest);
+        $this->setRequestObject($auxilioBeneficiarioMunicipioRequest);
         $this->setRequestMethod("GET");
 
         try{
@@ -20,7 +20,7 @@ class AuxilioService extends Service {
         }
     }
 
-    public function consultarAuxilioNis(AuxilioNisRequest $auxilioNisRequest){
+    public function consultarAuxilioCpfNis(AuxilioNisRequest $auxilioNisRequest){
         $this->setUrlApi("/auxilio-emergencial-por-cpf-ou-nis");
         $this->setRequestObject($auxilioNisRequest);
         $this->setRequestMethod("GET");

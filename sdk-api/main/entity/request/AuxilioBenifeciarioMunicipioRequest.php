@@ -2,7 +2,7 @@
 
 namespace org\gov\br\sdk\entity\request;
 
-class AuxilioBenifeciarioMunicipioRequest extends Request{
+class AuxilioBeneficiarioMunicipioRequest extends Request{
     protected $codigoIbge;
     protected $mesAno;
     protected $pagina;

@@ -20,12 +20,12 @@ $result = $serpro->consultarBolsaCpfNis("202005","202005","0000000000","1");
 
 //Metodo de consulta de benifeciario do auxilio por municipio
 //Params = 1-codigoIbge; 2-mesAno; 3-pagina
-$result = $serpro->consultarAuxilioBenifeciarioMunicipio("5300108", "202005","1");
+$result = $serpro->consultarAuxilioBeneficiarioMunicipio("5300108", "202005","1");
 
 //Metodo de consulta de benifeciario do auxilio por NIS
-//Params = 1-NISBenifeciario; 2-NISResponsavelFamiliar; 3-pagina
-$result = $serpro->consultarAuxilioNis("00000", "00000000","1");
+//Params = 1-CpfNisBenifeciario; 2-CpfNisResponsavelFamiliar; 3-pagina
+$result = $serpro->consultarAuxilioCpfNis("00000", "00000000","1");
 
 //Metodo de consulta dos dados do auxilio por municipio
 //Params = 1-codigoIbge; 2-mesAno; 3-pagina
-$result = $serpro->consultarAuxilioBenifeciarioMunicipio("5300108", "202005","1");
+$result = $serpro->consultarAuxilioMunicipio("5300108", "202005","1");

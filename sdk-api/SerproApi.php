@@ -2,7 +2,7 @@
 
 require_once dirname(__FILE__) . '/vendor/autoload.php';
 use org\gov\br\sdk\ControllerAPI;
-use org\gov\br\sdk\entity\request\AuxilioBenifeciarioMunicipioRequest;
+use org\gov\br\sdk\entity\request\AuxilioBeneficiarioMunicipioRequest;
 use org\gov\br\sdk\entity\request\AuxilioMunicipioRequest;
 use org\gov\br\sdk\entity\request\AuxilioNisRequest;
 use org\gov\br\sdk\entity\request\BolsaCpfNisRequest;
@@ -51,23 +51,23 @@ class SerproApi{
         return $response;
     }
 
-    public function consultarAuxilioBenifeciarioMunicipio($codigoIbge, $mesAno, $pagina){
-        $auxilioBenifeciarioMunicipio = new AuxilioBenifeciarioMunicipioRequest();
-        $auxilioBenifeciarioMunicipio->setCodigoIbge($codigoIbge);
-        $auxilioBenifeciarioMunicipio->setCodigoIbge($mesAno);
-        $auxilioBenifeciarioMunicipio->setCodigoIbge($pagina);
+    public function consultarAuxilioBeneficiarioMunicipio($codigoIbge, $mesAno, $pagina){
+        $auxilioBeneficiarioMunicipio = new AuxilioBeneficiarioMunicipioRequest();
+        $auxilioBeneficiarioMunicipio->setCodigoIbge($codigoIbge);
+        $auxilioBeneficiarioMunicipio->setCodigoIbge($mesAno);
+        $auxilioBeneficiarioMunicipio->setCodigoIbge($pagina);
 
-        $response = $this->apiService->auxilioService->consultarAuxilioBenifeciarioMunicipio($auxilioBenifeciarioMunicipio);
+        $response = $this->apiService->auxilioService->consultarAuxilioBeneficiarioMunicipio($auxilioBeneficiarioMunicipio);
         return $response;
     }
 
-    public function consultarAuxilioNis($codigoBenifeciario, $codigoResponsavelFamiliar, $pagina){
+    public function consultarAuxilioCpfNis($codigoBenifeciario, $codigoResponsavelFamiliar, $pagina){
         $auxilioNisRequest = new AuxilioNisRequest();
         $auxilioNisRequest->setCodigoBenifeciario($codigoBenifeciario);
         $auxilioNisRequest->setCodigoResponsavelFamiliar($codigoResponsavelFamiliar);
         $auxilioNisRequest->setPagina($pagina);
 
-        $response = $this->apiService->auxilioService->consultarAuxilioNis($auxilioNisRequest);
+        $response = $this->apiService->auxilioService->consultarAuxilioCpfNis($auxilioNisRequest);
         return $response;
     }
 

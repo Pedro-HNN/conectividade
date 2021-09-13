@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -46,10 +42,12 @@
     </div>
 
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      <a class="text-dark">© Desenvolvido por <a target="_blank" href="https://github.com/Pedro-HNN">Pedro H</a>,<a
-          target="_blank" href="https://github.com/gabrieldj1997">Gabriel C</a>,<a target="_blank"
-          href="https://github.com/lucasriber01">Jehan L</a>,<a target="_blank"
-          href="https://github.com/matheusleal55">Matheus L</a> para a Hackathon 2021</a>
+      <a class="text-dark">© Desenvolvido por
+        <a target="_blank" href="https://github.com/gabrieldj1997">Gabriel C</a>, 
+        <a target="_blank" href="https://github.com/Pedro-HNN">Pedro H</a>,
+        <a target="_blank" href="https://github.com/lucasriber01">Jehan L</a>,
+        <a target="_blank" href="https://github.com/matheusleal55">Matheus L</a> 
+        para a Hackathon 2021
+      </a>
     </div>
-  </footer>
   </footer>

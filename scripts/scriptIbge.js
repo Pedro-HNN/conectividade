@@ -33,7 +33,6 @@ function montarSelectMunicipios(sigla){
         });
         $('#selMunicipio').html(htmlMunicipios)
         retornarCapital(sigla)
-        habilitarMapa()
     })
 }
 
