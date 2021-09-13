@@ -4,11 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../views/style/style-busca.css">
 
@@ -34,7 +31,7 @@
                             <hr />
                             <div class="form-group">
                                 <input type="text" class="btn btn-lg" id="cpf-bolsa" placeholder="Digite seu CPF!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;" />
-                                <input type="text" class="btn btn-lg datepicker" name="datepicker" id="datepickerCompetencia" placeholder="Mês Competência" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;margin-top:5px;" />
+                                <input type="text" class="btn btn-lg " name="datepicker" id="datepicker" placeholder="Mês Competência" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;margin-top:5px;" />
                                 <button id="btn-consultar" class="btn btn-lg shadow p-4 lg-5 rounded" value="submit" style="background-color: #0094d9;border-color:#0094d9;margin-top:5px;color:#ffffff;">Consultar</button>
                             </div>
                         </div>
@@ -43,27 +40,27 @@
 
             </div>
             <div class="col-md-6">
-                <div id="pesquisa-bolsa" align="center">
+                <div id="pesquisa-auxilio" align="center">
                     <div class="card custom-card shadow p-2 mb-5 bg-white rounded h-100" style="max-width: 25rem; border-color: #0094d9;">
                         <div class="card-body text-dark ">
                             <h5 class="card-title">Pesquise aqui sua situação do Auxilio Emergencial!</h5>
-                            <hr />
+                            <hr/>
                             <div class="form-group">
                                 <input type="text" class="btn btn-lg " id="nis-auxilio" placeholder="NIS do Beneficiário!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;" />
                                 <input type="text" class="btn btn-lg " id="nis-auxilio" placeholder="NIS do Responsável!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;margin-top:5px;" />
-                                <button id="btn-consultar" class="btn btn-sm shadow p-4 lg-5 rounded" value="submit" style="background-color: #0094d9;border-color:#0094d9;margin-top:5px;color:#ffffff;">Consultar</button>
+                                <button id="btn-consultar" class="btn btn-lg shadow p-4 lg-5 rounded" value="submit" style="background-color: #0094d9;border-color:#0094d9;margin-top:5px;color:#ffffff;">Consultar</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <div align="center">
-            <div class="row">
-                <div class-"col-md-6">
-                    <div align="center" class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
+
+        <div class="row">
+            <div class="col-md-6">
+            	<div id="resultado-bolsa" align="center">
+                	<div class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
                         <div id="bolsa-info">
                             <div id="nome"></div>
                             <div id="estado"></div>
@@ -71,29 +68,40 @@
                             <div id="dependentes"></div>
                         </div>
                     </div>
-                </div>
+            	</div>
+            </div>
 
-                <div class-"col-md-6">
-                    <div align="center" class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
+            <div class="col-md-6">
+            	<div id="resultado-auxilio" align="center">
+                	<div class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
                         <div id="auxilio-info">
                             <div id="nome"></div>
                             <div id="estado"></div>
-                            <div id="total-parcelas"></div>
-                            <div id="total-dinheiro"></div>
+                            <div id="parcela">
+                            	<div id="nome-beneficiario"></div>
+                            	<div id="valor-parcela"></div>
+                            	<div id="numero-parcela"></div>
+                            	<div id="enquadramento-auxilio"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
+            	</div>
             </div>
         </div>
     </div>
 
+
     <?php include_once 'footer.html' ?>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 <script src="../scripts/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
 <script>
-    $(".datepicker").datepicker({
+    $("#datepicker").datepicker({
         format: "mm/yyyy",
         startView: "months",
         minViewMode: "months",
