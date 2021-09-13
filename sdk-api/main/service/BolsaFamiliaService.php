@@ -19,7 +19,7 @@ class BolsaFamiliaService extends Service{
         }
     }
     public function consultarBolsaMunicipio(BolsaMunicipioRequest $bolsaMunicipioRequest){
-        $this->setUrlApi("/bolsa-familia-disponivel-por-cpf-ou-nis");
+        $this->setUrlApi("/bolsa-familia-por-municipio");
         $this->setRequestObject($bolsaMunicipioRequest);
         $this->setRequestMethod("GET");
 
@@ -31,7 +31,7 @@ class BolsaFamiliaService extends Service{
         }
     }
     public function consultarBolsaParcelaSaqueNis(BolsaParcelaSaqueNis $bolsaParcelaSaqueNis){
-        $this->setUrlApi("/bolsa-familia-disponivel-por-cpf-ou-nis");
+        $this->setUrlApi("/bolsa-familia-sacado-por-nis");
         $this->setRequestObject($bolsaParcelaSaqueNis);
         $this->setRequestMethod("GET");
 

@@ -21,7 +21,7 @@ class AuxilioService extends Service {
     }
 
     public function consultarAuxilioNis(AuxilioNisRequest $auxilioNisRequest){
-        $this->setUrlApi("/auxilio-emergencial-beneficiario-por-municipio");
+        $this->setUrlApi("/auxilio-emergencial-por-cpf-ou-nis");
         $this->setRequestObject($auxilioNisRequest);
         $this->setRequestMethod("GET");
 
@@ -34,7 +34,7 @@ class AuxilioService extends Service {
     }
 
     public function consultarAuxilioMunicipio(AuxilioMunicipioRequest $auxilioMunicipioRequest){
-        $this->setUrlApi("/auxilio-emergencial-beneficiario-por-municipio");
+        $this->setUrlApi("/auxilio-emergencial-por-municipio");
         $this->setRequestObject($auxilioMunicipioRequest);
         $this->setRequestMethod("GET");
 

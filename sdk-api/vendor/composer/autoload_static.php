@@ -43,7 +43,6 @@ class ComposerStaticInit4257e2a662f50524442964cbb92d8479
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'org\\gov\\br\\sdk\\ControllerAPI' => __DIR__ . '/../..' . '/main/ControllerAPI.php',
         'org\\gov\\br\\sdk\\entity\\request\\AuxilioBenifeciarioMunicipioRequest' => __DIR__ . '/../..' . '/main/entity/request/AuxilioBenifeciarioMunicipioRequest.php',
         'org\\gov\\br\\sdk\\entity\\request\\AuxilioMunicipioRequest' => __DIR__ . '/../..' . '/main/entity/request/AuxilioMunicipioRequest.php',
