@@ -72,7 +72,6 @@ $router->get('/api/consulta/auxilio/nis', function(){
 });
 
 $router->get('/api/consulta/auxilio/municipio', function(){
-    var_dump($_REQUEST);die;
     $codigoIbge = $_REQUEST['codigoIbge'];
     $mesAno = $_REQUEST['mesAno'];
     $pagina = $_REQUEST['pagina'];

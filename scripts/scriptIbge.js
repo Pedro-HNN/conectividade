@@ -1,4 +1,4 @@
-async function montarSelectEstados() {
+function montarSelectEstados() {
     $.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados').done(data => {
         let htmlEstados = '<option>Selecione o Estado</option>';
         data.forEach(e => {
@@ -8,9 +8,12 @@ async function montarSelectEstados() {
     })
 }
 
-async function retornarCapital(estadoSigla){
-    await $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoSigla}/regioes-intermediarias`).done(data =>{
-        id = $(`#selMunicipio option[name="${data[0].nome}"]`).val()
+function retornarCapital(estadoSigla){
+    $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoSigla}/regioes-intermediarias`).done(data =>{
+        
+        nomeMunicipio = data[0].nome == "Distrito Federal" ? "Brasília" : data[0].nome
+
+        id = $(`#selMunicipio option[name="${nomeMunicipio}"]`).val()
         $('#selMunicipio').val(id)
         if (vericacao()) {
             estado = $('#selEstados').val()
@@ -22,7 +25,7 @@ async function retornarCapital(estadoSigla){
     })
 }
 
-async function montarSelectMunicipios(sigla){
+function montarSelectMunicipios(sigla){
     $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${sigla}/municipios`).done(data => {
         let htmlMunicipios = '<option>Selecione o Municipio</option>';
         data.forEach(e => {
@@ -33,8 +36,8 @@ async function montarSelectMunicipios(sigla){
     })
 }
 
-async function capitalAjax(estadoSigla) {
+function capitalAjax(estadoSigla) {
 	var result;
-	await $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoSigla}/regioes-imediatas`).done(data => { result = data[0] })
+	$.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoSigla}/regioes-imediatas`).done(data => { result = data[0] })
 	return result
 }
