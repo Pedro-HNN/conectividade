@@ -20,8 +20,6 @@
     </style>
 
 </head>
-
-
 <body>
 
     <?php include_once 'header.html' ?>
@@ -55,7 +53,7 @@
                     </div>
             	</div>
         </div>
-
+	</div>
         
             
 	</div>

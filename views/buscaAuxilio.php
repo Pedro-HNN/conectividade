@@ -25,10 +25,11 @@
     <?php include_once 'header.html' ?>
 
 
-            </div>
+    <div class="container">
+        <div class="row">
             <div class="col-md-6">
-                <div id="pesquisa-auxilio" align="center">
-                    <div class="card custom-card shadow p-2 mb-5 bg-white rounded h-100" style="max-width: 25rem; border-color: #0094d9;">
+                <div id="pesquisa-bolsa" align="center">
+                    <div class="card custom-card shadow p-2 mb-5 bg-white rounded h-100" style="margin-top:20px;max-width: 25rem; border-color: #0094d9;">
                         <div class="card-body text-dark ">
                             <h5 class="card-title">Pesquise aqui sua situação do Auxilio Emergencial!</h5>
                             <hr/>
@@ -37,24 +38,20 @@
                                 <input type="text" class="btn btn-lg " id="nis-auxilio" placeholder="NIS do Responsável!" style="background-color: #0094d9;border-color: #0094d9; color:#ffffff;margin-top:5px;" />
                                 <button id="btn-consultar" class="btn btn-lg shadow p-4 lg-5 rounded" value="submit" style="background-color: #0094d9;border-color:#0094d9;margin-top:5px;color:#ffffff;">Consultar</button>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>
-        </div>
-
             <div class="col-md-6">
-            	<div id="resultado-auxilio" align="center">
+            	<div id="resultado-bolsa" align="center">
                 	<div class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
-                        <div id="auxilio-info">
-                            <div id="nome"></div>
-                            <div id="estado"></div>
-                            <div id="parcela">
-                            	<div id="nome-beneficiario"></div>
-                            	<div id="valor-parcela"></div>
-                            	<div id="numero-parcela"></div>
-                            	<div id="enquadramento-auxilio"></div>
-                            </div>
+                        <div id="nome"></div>
+                        <div id="estado"></div>
+                        <div id="parcela">
+                        	<div id="nome-beneficiario"></div>
+                        	<div id="valor-parcela"></div>
+                        	<div id="numero-parcela"></div>
+                        	<div id="enquadramento-auxilio"></div>
                         </div>
                     </div>
             	</div>
