@@ -23,7 +23,7 @@
   <?php include_once 'header.php' ?>
 
   <div class="container-body">
-    <div class="row" style="justify-content: center;">
+    <div class="row justify-content-around">
 
       <div id="informacoes" class="col-md-3 custom-col " align="center">
         <div class="card custom-card shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem; border-color: #0094d9;">
@@ -524,7 +524,6 @@
   $("#datepicker").change(event => {})
 
   $("#selMunicipio").change(event => {
-    desabilitarMapa()
     atualizarData()
     if (vericacao()) {
       estado = $('#selEstados').val()

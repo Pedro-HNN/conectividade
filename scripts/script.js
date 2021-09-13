@@ -1,9 +1,9 @@
 function bolsaMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1) {
-	console.log(estado, codigoIbge, anoMes, pagina)
 	anoMes = anoMes.split('/')
 	ano = anoMes[1]
 	mes = anoMes[0]
 	anoMes = ano.toString() + mes.toString();
+    desabilitarMapa()
 	if (estado == null || estado == undefined) {
 		console.log('Log: bolsaMunicipio; param: estado')
 		return
@@ -16,6 +16,7 @@ function bolsaMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1) {
 		console.log('Log: bolsaMunicipio; param: anoMes')
 		return
 	}
+	console.log('ok')
 	$.ajax({
 		url: "/hackathon/public/api/consulta/bolsa/municipio",
 		type: "get",
@@ -25,6 +26,7 @@ function bolsaMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1) {
 			pagina: pagina
 		},
 		success: function (response) {
+			habilitarMapa()
 			try {
 				response = JSON.parse(response)
 				if (response[0] != null) {
@@ -56,6 +58,7 @@ function bolsaMunicipioAjax(estado, codigoIbge, anoMes, pagina = 1) {
 			}
 		},
 		error: function (xhr) {
+			habilitarMapa()
 			alert('Erro, contate o adm');
 		}
 	});
