@@ -14,7 +14,7 @@
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
   <style>
-    * {
+     * {
       margin: 0;
       padding: 0;
     }
@@ -23,20 +23,7 @@
     body {
       height: 100%;
     }
-
-    @media all and (min-width:750px) {
-      .select-responsivo {
-        display: none;
-      }
-    }
-
-    @media all and (max-width:749px) {
-      #mapa {
-        display: none;
-      }
-    }
-
-    .container {
+    .container-xxl {
       margin-top: 20px;
       min-height: 61%;
     }
@@ -47,6 +34,10 @@
 
     #info-state {
       display: none;
+    }
+    
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        opacity: 1; /* Firefox */
     }
   </style>
 

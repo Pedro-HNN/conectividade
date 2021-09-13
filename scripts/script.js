@@ -101,3 +101,72 @@ function atualizarMapa(siglaEstado){
 	$('.mapActive').removeClass('mapActive')
 	$(`[cod-state="${siglaEstado}"]`).find('path').addClass('mapActive')
 }
+
+  //FUNÇÕES DA PAGINA
+
+  function vericacao() {
+    if ($('#selEstados').val() != 'Selecione o Estado') {
+      if ($('#selMunicipio').val() != 'Selecione o Municipio') {
+        return true
+      } else {
+        alert('Selecione o municipio!')
+      }
+    } else {
+      alert('Selecione o estado!')
+    }
+  }
+
+  //EVENTOS
+
+  $("#datepicker").datepicker({
+    format: "mm/yyyy",
+    startView: "months",
+    minViewMode: "months",
+    startDate: new Date('2013-01-20'),
+    endDate: new Date('2021-08-1')
+  });
+
+  $('#selEstados').change(event => {
+    estadoSigla = $(event.currentTarget).val()
+
+    atualizarData()
+    atualizarMapa(estadoSigla)
+    montarSelectMunicipios(estadoSigla)
+
+  })
+
+  $("#datepicker").change(event => {
+  })
+
+  $("#selMunicipio").change(event => {
+    atualizarData()
+    if (vericacao()) {
+            estado = $('#selEstados').val()
+            codigoIbge = $('#selMunicipio').val()
+            anoMes = $('#datepicker').val()
+            pagina = $('#valPagina')
+            bolsaMunicipioAjax(estado, codigoIbge, anoMes)
+          }
+  })
+
+  $('#btn-consultar').click(function() {
+    var estado = $('#select-estados option:selected').text(); //pega nome do estado
+    var codigoIbge = $('#select-estados').val(); //pega código IBGE para as consultas API
+    var anoMes = $('#datepicker').val(); //pega mês e ano
+
+    bolsaMunicipioAjax(estado, codigoIbge, anoMes)
+  });
+
+  $('#map .state').click(event => {
+    var estadoSigla = $(event.currentTarget).attr('cod-state');
+    atualizarMapa(estadoSigla)
+    $('#selEstados').val(estadoSigla)
+    $('#selEstados').trigger('change')
+    montarSelectMunicipios(estadoSigla)
+    retornarCapital(estadoSigla)
+    atualizarData()
+  });
+
+  window.onload = () => {
+    montarSelectEstados()
+  }
