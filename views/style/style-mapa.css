@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+.container-xxl {
+  margin-top: 20px;
+  min-height: 58%;
+}
+
+.custom-col {
+  margin-bottom: 20px;
+}
+
+#info-state {
+  display: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 1; /* Firefox */
+}
