@@ -12,9 +12,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-  
 
-	<link rel="stylesheet" href="../views/style/style-mapa.css">
+
+  <link rel="stylesheet" href="../views/style/style-mapa.css">
   <title>+Conectividade</title>
 </head>
 
@@ -23,10 +23,10 @@
   <?php include_once 'header.html' ?>
 
 
-  <div class="container-xxl">
-    <div class="row">
+  <div class="container-body">
+    <div class="row" style="justify-content: center;">
 
-      <div id="informacoes" class="col-xl-4 custom-col " align="center">
+      <div id="informacoes" class="col-md-3 custom-col " align="center">
         <div class="card custom-card shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem; border-color: #0094d9;">
           <div class="card-body text-dark ">
             <h5 class="card-title">Conheça nossa platafora +Conectividade</h5>
@@ -37,7 +37,7 @@
         </div>
       </div>
 
-      <div div class="col-xl-4 custom-col">
+      <div div class="col-md-3 custom-col">
         <div id="mapa" text-align="center">
           <svg id="map" x="0px" y="0px" align="center" width="450px" height="460px">
             <g>
@@ -71,8 +71,8 @@
                     c0.521-1.505,2.465-0.725,3.533-0.794c2.273-0.164,0.494-2.738,1.095-3.778c2.026-3.793-2.738-5.999-1.998-10.408
                     c4.024,1.931,9.448,3.397,12.408,6.89c1.343,1.533,5.504,2.656,5.832,4.847c-6.822,0.384-6.901,8.819-11.942,11.572
                     C413.545,202.212,407.055,193.721,408.561,191.735z"></path>
-                <path class="circle shape" d="M417.324,182.854c6.214,0,11.266,5.035,11.266,11.262c0,6.208-5.052,11.261-11.266,11.261
-  c-6.238,0-11.258-5.053-11.258-11.261C406.063,187.89,411.084,182.854,417.324,182.854z"></path>
+                <path class="circle shape" d="M417.324,182.854c6.214,0,11.266,5.035,11.266,11.262c0,6.208-5.052,11.261-11.266,11.261 
+                c-6.238,0-11.258-5.053-11.258-11.261C406.063,187.89,411.084,182.854,417.324,182.854z"></path>
                 <text transform="matrix(1 0 0 1 408.9121 198.6689)" fill="#FFFFFF">SE</text>
               </a>
               <a href="#" id="state_pe" class="state" cod-state="PE" data-state="Pernambuco" xlink:href="">
@@ -168,7 +168,7 @@
                 <text transform="matrix(1 0 0 1 245.9023 52.6099)" fill="#FFFFFF">AP</text>
               </a>
 
-              <a href="#" id="state_pa"  class="state" cod-state="PA" data-state="Pará" xlink:href="">
+              <a href="#" id="state_pa" class="state" cod-state="PA" data-state="Pará" xlink:href="">
                 <title>Pará</title>
                 <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M173.378,50.619
 
@@ -355,7 +355,7 @@
               </a>
               <a href="#" id="state_mg" class="state" cod-state="MG" data-state="Minas Gerais" xlink:href="">
                 <title>Minas Gerais</title>
- <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M262.881,297.305
+                <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M262.881,297.305
 
                     c-1.696-5.094,15.531-19.882,18.844-13.421c5.531-7.367,15.886,1.588,19.773-3.944c0.988-1.367,3.015-1.453,3.725-2.957
                     c0.326-0.711-0.493-2.793-0.056-3.888c1.369-3.398-4.873-2.355-0.109-6.603c4.547-4.053-1.917-4.739-1.204-8.186
@@ -394,7 +394,7 @@
               </a>
               <a href="#" id="state_es" class="state" cod-state="ES" data-state="Espírito Santo" xlink:href="">
                 <title>Espírito Santo</title>
-          <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M367.119,308.834
+                <path stroke="#FFFFFF" class="shape" stroke-width="1.0404" stroke-linecap="round" stroke-linejoin="round" d="M367.119,308.834
 
                     c1.044-1.999-0.298-5.451,1.841-6.326c3.697-1.453,3.858-0.467,5.941-4.49c0.767-1.563,3.999-5.807,2.848-7.835
                     c-0.439-0.765-3.204-3.613-3.286-4.05c1.04-0.249,2.079-0.219,3.123,0.054c1.366-0.654-6.465-10.519,2.137-8.054
@@ -439,10 +439,11 @@
         </div>
       </div>
 
-      <div id="seleciona-data" class="col-xl-4 custom-col" align="center">
+      <div id="seleciona-data" class="col-md-3 custom-col" align="center">
 
-        <div class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 18rem;margin-top:20px;border-color:#0094d9;">
+        <div class="card text-dark shadow p-3 mb-5 bg-white rounded" style="margin-top:20px;border-color:#0094d9;">
           <div class="cardRegiao" align="center">
+            <h3>Selecione a região e a data</h3>
             <select id="selEstados" class="btn btn-lg cardItemRegiao" placeholder="Selecione o Estado" style="background-color: #0094d9;border-color: #0094d9;color:#ffffff">
 
               <option>Selecione o Estado</option>
@@ -464,12 +465,12 @@
         </div>
 
         <div class="select-responsivo">
-         
+
 
         </div>
 
 
-        <div id="info-state" class="card text-dark shadow p-3 mb-5 bg-white rounded" style="max-width: 25rem;margin-top:20px;border-color:#0094d9;">
+        <div id="info-state" class="card text-dark shadow p-3 mb-5 bg-white rounded" style="margin-top:20px;border-color:#0094d9;">
           <div id="info-state-title"></div>
           <div id="info-state-bolsa"></div>
           <div id="info-state-auxilio"></div>
@@ -520,18 +521,17 @@
 
   })
 
-  $("#datepicker").change(event => {
-  })
+  $("#datepicker").change(event => {})
 
   $("#selMunicipio").change(event => {
     atualizarData()
     if (vericacao()) {
-            estado = $('#selEstados').val()
-            codigoIbge = $('#selMunicipio').val()
-            anoMes = $('#datepicker').val()
-            pagina = $('#valPagina')
-            bolsaMunicipioAjax(estado, codigoIbge, anoMes)
-          }
+      estado = $('#selEstados').val()
+      codigoIbge = $('#selMunicipio').val()
+      anoMes = $('#datepicker').val()
+      pagina = $('#valPagina')
+      bolsaMunicipioAjax(estado, codigoIbge, anoMes)
+    }
   })
 
   $('#btn-consultar').click(function() {
